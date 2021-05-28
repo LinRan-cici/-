@@ -84,7 +84,7 @@
         }, 0)
         console.log('start');
  */
-        const promise1 = new Promise((resolve, reject) => {
+        /* const promise1 = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve("success");
                 console.log("timer1");
@@ -100,9 +100,19 @@
             console.log("timer2");
             console.log("promise1", promise1);
             console.log("promise2", promise2);
-        }, 2000);
+        }, 2000); */
 
-        
+        Promise.resolve()
+            .then(function success(res) {
+                throw new Error('error!!!')
+            }, function fail1(err) {
+                console.log('fail1', err)
+            }).catch(function fail2(err) {
+                console.log('fail2', err)
+            })
+
+
+
 
 
     </script>
