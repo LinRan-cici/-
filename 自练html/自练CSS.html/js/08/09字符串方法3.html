@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        字符串转换：
+        toLowerCase();
+            字符串转小写
+
+        toUpperCase：
+             字符串转大写
+
+        split():
+           将字符串转为数组
+           -如果不传参，则把字符串当做数组唯一一个值
+           -可以传参数，控制字符串以声明字符 进行切割  转为数组
+        
+        */
+
+      /*   var str ="HELLO  hai JINg";
+        console.log(str.toLowerCase());//hello  hai jing
+        console.log(str.toUpperCase());//HELLO  HAI JING */
+
+       /*  var str ="HELLO hai JINg";
+          console.log(str.split());//加中括号["HELLO hai JINg"]
+          console.log(str.split(" "));//["HELLO", "hai", "JINg"]
+          console.log(str.split(""));//["H", "E", "L", "L", "O", " ", "h", "a", "i", " ", "J", "I", "N", "g"]
+           */
+          //把字符串翻转
+          var str = "haijinggege";
+          /* var newStr = "";
+          for (var i =str.length-1;i>=0;i--){
+              newStr +=str[i];
+          }
+          console.log(newStr); */
+
+           /* var strArr = str.split("")
+          console.log(strArr)
+          var reStrArr = strArr.reverse();
+          var re = reStrArr.join("");
+          console.log(re); */ 
+ 
+          var re = str.split("").reverse().join("");
+          console.log(re);
+          
+
+    </script>
+</body>
+</html>

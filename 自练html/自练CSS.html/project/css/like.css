@@ -1,0 +1,73 @@
+.like{
+    margin-top:15px;
+}
+.like .py-container{
+    width:1200px;
+    margin:0 auto;
+     
+}
+ .like .py-container .title{ 
+    overflow: hidden;
+}
+.like .py-container .title h3{
+    font-size: 20px;
+    float: left;
+    line-height:30px;
+}
+.like .py-container .title a{
+    float: right;
+    width:66px;
+     height:25px;
+     font-size: 12px;
+     line-height: 30px;
+     background-position:182px -104px;
+    background-image: url('../project/img/home/bg0.png');
+} 
+.like .py-container .bd{
+    margin-top: -15px;
+}
+   
+
+.like .py-container .bd .favourite{
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;
+    border:1px solid #e4e4e4;
+    padding:0 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+}
+.like .favourite li{
+    float: left;
+    overflow: hidden;
+    background-image: #fff;
+    margin:0 -1px;
+    width:16.667%;
+
+}
+.like .favourite li img{
+    width:142px;
+    height:142px;
+    transition:all 400ms;
+}
+.like .favourite li img:hover{
+   opacity: 0.8;
+   transform: scale(1.1);
+}
+.like .favourite .like-text{
+    overflow: hidden;
+    width:142px;
+    margin:9px 5px;
+}
+.like .favourite h3{
+    font-size: 20px;
+    color:#df3033;
+    line-height: 30px;
+    margin:9px 9px;
+    font-weight: 700;
+    
+
+
+}

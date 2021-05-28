@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="../type.html/text.css/appleHeader/iconfont.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .out .da {
+            display: none;
+        }
+
+        .out {
+            display: flex;
+            background-color: black;
+            justify-content: space-between;
+        }
+
+        .menu,
+        .apple,
+        .gouwudai {
+            height: 48px;
+            line-height: 48px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .out a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+
+
+        @media (min-width:768px) {
+            .out .menu {
+                display: none;
+            }
+
+            .out .center .da {
+                display: block;
+            }
+
+      
+            .apple,
+            .gouwudai {
+                margin: 0;
+           
+
+            }
+
+            .out a {
+                font-size: 14px;
+
+            }
+
+            .out div.iconfont a {
+                font-size: 20px;
+            }
+
+
+
+            .center {
+                display: flex;
+                flex-grow: 0.88;
+                justify-content: space-evenly;
+                
+            }
+            .da{
+               height:48px;
+               line-height: 48px;
+            }
+
+            .apple {
+                flex-grow: 0.08;
+            }
+            .gouwudai{
+                flex-grow: 0.07;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+        <div class="iconfont  menu">
+            <a href="#">&#xe789;</a>
+        </div>
+        <div class="center">
+            <div class="iconfont apple">
+                <a href="#">&#xe63d;</a>
+            </div>
+            <div class=" da">
+                    <a href="#">Mac</a>
+            </div>
+            <div class="da">
+                <a href="#">iPad</a>
+            </div>
+            <div class="da">
+                <a href="#">iphone</a>
+            </div>
+            <div class="da">
+                <a href="#">Watch</a>
+            </div>
+            <div class="da">
+                <a href="#">Music</a>
+            </div>
+            <div class="da">
+                <a href="#">技术支持</a>
+            </div>
+            <div class="iconfont da sousuo">
+                <a href="#">&#xe616;</a>
+            </div>
+        </div>
+        <div class="iconfont gouwudai">
+            <a href="#">&#xe725;</a>
+        </div>
+    </div>
+</body>
+
+</html>

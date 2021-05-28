@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        浅拷贝：
+        
+        
+        
+        */
+
+        var obj  = {
+            name:"laowang",
+            do:function(){
+
+            },
+            score:[10,20,30]
+        }
+      //这不是复制，而是给obj又起了个名字
+        // var obj2 =obj;
+
+        var obj2 = {
+            score:0x111
+        };
+        //遍历obj 把obj的值传入obj2 
+        for(var key in obj){
+            obj2[key]=obj[key];
+        }
+        console.log(obj2);
+        console.log(obj2 ===obj);//false
+
+        obj2.score.pop();
+        console.log(obj.score)
+        console.log(obj.do===obj2.do);//函数不可更改，函数是公有的
+    </script>
+</body>
+</html>

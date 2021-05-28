@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        手写new
+          - new做了什么？
+          -创建一个对象，并把这个对象返回
+          - 把构建函数的this指向这个创建的对象
+          -将这个对象的原型链修改，将隐式原型指向构造函数的显示原型
+        
+        */
+
+        function person(name,age){
+            this.name = name;
+            this.age = age;
+            return [];
+        }
+        person.prototype.do = function(){
+            console.log("do");
+        }
+         
+        var p1 = new person("laowang",26);
+        console.log(p1);
+
+        function myNew(constru){
+            //1.创建一个对象
+            var obj = {};
+            //2.调用构造函数，并把构造函数的this指向当前的对象
+            var arg = Array.from(arguments).slice(1);
+            //re就是函数调用后的返回值
+            var re = constru.apply(obj,arg)
+            //3.修改原型链，让obj的隐式原型指向构造函数的显示原型
+            obj.__proto__ = constru.prototype;
+
+            //4.返回对象之前，判断构造函数的返回值是基本类型还是对象类型
+            //如果是对象类型，则直接返回构造函数的返回值，否则返回obj
+
+            if(typeof re==="object" && typeof re != null||typeof re === "function" ){
+                return re;
+            }
+    
+            return obj;
+
+        }
+        var p2 = myNew (person,"xiaowang",20);
+        console.log(p2);
+
+        console.log(p2.do===p1.do);//true
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        concat方法：
+        合并字符串
+        但是现在都使用加法拼接，运行速度更快
+    
+        */
+
+        var str = "hello";
+        var re = str.concat("world");
+        console.log(str); //hello
+        console.log(re);//helloworld
+
+
+        /* 
+        charAt();
+           -查询某个下标的字符是什么，如果查询不到返回空串
+           - 可以直接使用下标代替，查询不到返回undefined
+        8`
+        */
+
+        var str = "hello world";
+        console.log(str.charAt(2));//l
+        console.log(str.charAt(100));//空串
+        console.log(str[2]);//l
+        console.log(str[100]);//underfined
+    </script>
+</body>
+</html>

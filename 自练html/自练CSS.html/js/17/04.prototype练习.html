@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        可以给内置对象扩展方法
+ 
+        //给Array扩展一个去重的方法
+        //设计目标：返回去重后的数组，原数组不变
+        
+        
+        */
+            var newArr =[];
+       Array.prototype.qc = function (){
+           this.forEach(function(item,index){
+              if(newArr.indexOf (item)=== -1){
+                  newArr.push(item);
+              }
+           })
+               return newArr;
+       }
+        var arr = [2, 5, 3, 1, 2, 3, 5, 8,];
+        var re = arr.qc();
+        console.log(re);
+
+        //给String扩展一个去空格的方法
+       String.prototype.deleteSpalce = function(){
+          return this.replace(/\s/g,"")
+       }
+        var str = "1 2 3 00     56";
+        var re = str.deleteSpalce();
+        console.log(re);
+
+        
+    </script>
+</body>
+
+</html>

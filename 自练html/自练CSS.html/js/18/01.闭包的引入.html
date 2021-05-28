@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        /* 
+        
+        需求：点击li 弹出该li的下标
+
+         */
+
+        var oBox = document.getElementById('box');
+        var oLis = document.getElementsByTagName("li");
+
+
+        /* for (var i = 0; i < oLis.length; i++) {
+            oLis[i].index = i;
+            oLis[i].onclick = function () {
+                alert(this.index);//事件的执行是异步的，用不到for的i
+            }
+        } */
+
+      /*   oBox.onclick = function (e) {
+            if (e.target.nodeName === "LI") {
+                for (var i = 0; i < oLis.length; i++) {
+                    if (e.target === oLis[i]) {
+                        alert(i)
+                    }
+                }
+            }
+        }   //事件委托 */
+
+
+        /* for (var i = 0; i < oLis.length; i++) {
+            (function (i) {
+                oLis[i].onclick = function () {
+                    alert(i)
+                }
+            })(i)//IIFC
+
+        } */
+
+
+        Array.from(oLis).forEach(function (item, index) {
+            item.onclick = function () {
+                alert(index);
+            }
+        })
+    </script>
+</body>
+
+</html>

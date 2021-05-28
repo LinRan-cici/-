@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+           set时间 返回时间戳
+        
+         */
+
+         var now = new Date();
+         //设置年份(number类型)
+         console.log(now.setFullYear(2022));//返回毫秒数
+         console.log(now)
+         //获取年份
+         console.log(now.getFullYear());//返回年份
+         console.log(now)
+         //console.log(now.getYear)//不准确，不用
+
+         //设置月份
+         console.log(now.setMonth(1));
+         console.log(now);
+         //获取月份
+         console.log(now.getMonth());
+         console.log(now);
+
+         //设置日期
+         console.log(now.setDate(2));
+         console.log(now);
+         //获取日期
+         console.log(now.getDate());
+         console.log(now);
+
+         //设置小时
+         console.log(now.setHours(13));
+         console.log(now);
+          //获取小时
+         console.log(now.getHours());
+         console.log(now);
+
+         //设置分钟
+         console.log(now.setMinutes(26));
+         console.log(now);
+         //获取分钟
+         console.log(now.getMinutes());
+         console.log(now);
+
+         //设置秒数
+         console.log(now.setSeconds(35));
+         console.log(now);
+          //获取秒数
+         console.log(now.getSeconds());
+         console.log(now);
+
+         //设置毫秒
+         console.log(now.setMilliseconds(456));
+         console.log(now);
+         //获取毫秒
+         console.log(now.getMilliseconds());
+         console.log(now);
+
+         //获取星期
+         console.log(now.getDay());
+
+         //设置时间戳  在计算机元年的基础上增加
+         console.log(now.setTime(1000));
+         console.log(now);
+         //获取时间戳
+         console.log(now.getTime());
+         console.log(now);
+
+    </script>
+</body>
+</html>

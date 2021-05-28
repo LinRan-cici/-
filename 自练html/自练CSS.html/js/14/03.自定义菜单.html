@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #box {
+            width: 200px;
+            height: 300px;
+         background-color: hotpink;
+           position: fixed ;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+     
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <p id="reload">刷新</p>
+    </div>
+    <script>
+        /* 
+        阻止默认事件：
+        主流：e.preventDfault();
+        IE:e.returnValue = false;
+
+        有个简单粗暴的阻止默认事件方式
+        return false;(书写在末尾)
+        
+        
+        */
+        var oBox = document.getElementById('box');
+        var oReload = document.getElementById('reload');
+        var l = 0;
+        var t = 0;
+
+        document.oncontextmenu = function (e) {   
+            var winWH ={
+               width:document.documentElement.clientWidth,
+               height:document.documentElement.clientHeight
+           };
+
+            //显示元素内容        
+            oBox.style.display = "block";
+            //获取窗口的宽高
+           
+           //横向定位
+           l= e.clientX;
+           t = e.clientY;
+
+           //判断
+           if(l >= winWH.width - oBox.offsetWidth){
+              l -=oBox.offsetWidth;
+           }
+
+           if(t >= winWH.height - oBox.offsetHeight){
+              t -=oBox.offsetHeight;
+           }
+            
+           //赋值
+            oBox.style.left = l + "px";
+            oBox.style.top = t + "px"; 
+
+
+            return false;
+        }
+
+
+        oReload.onclick = function(){
+           location.reload();
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+
+.banner{
+    position: relative;
+    width: 730px;
+    height: 461px;
+    /* border: 1px solid red; */
+    top:-461px;
+    left:-22px;
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: 0;
+   
+}
+
+.banner ul{
+    position: absolute;
+    padding:0;
+    margin: 0;
+    width:2960px;
+    top:0;
+    left: 0;
+   list-style-type: none;
+  
+}
+   
+.banner ul::after{
+    content:'';
+    display: block;
+    clear: both
+}
+.banner li{
+    float: left;
+    padding: 0%;
+    margin:0;
+}
+.banner li a{
+    display: block;
+    
+}
+ .banner li a img{
+     width:730px;
+     height:461px;
+     
+ }
+.arrow-prev{
+    position: absolute;
+    background-image: url(../img/icon-slides.png);
+    width: 42px;
+    height:70px;
+    top:50%;
+    margin-top: -35px;
+    left:0;
+    background-position: -84px 0;
+}
+.banner:hover  .arrow-prev{
+    background-position:0px 0px;
+}
+.arrow-next{
+    position: absolute;
+    background-image: url(../img/icon-slides.png);
+    width: 42px;
+    height:70px;
+    top:50%;
+    margin-top: -35px;
+    right:0;
+    background-position: -123px 0;
+}
+.banner:hover .arrow-next{
+    background-position:-41px 0;
+}
+.bottom{
+    position: absolute;
+    width:72px;
+    height:8px;
+    /* background-color: #007aff; */
+    bottom:10px;
+    left:50%;
+    margin-left: -36px;
+    box-sizing: border-box;
+    
+}
+.bottom div{
+    
+    float:left;
+    width: 8px;
+    height: 8px;
+    margin-left:5px;
+    margin-right: 5px;
+    background-color:rgba(0,0,0,.5)
+}
+.bottom div.active{
+    background-color:#007aff;
+}

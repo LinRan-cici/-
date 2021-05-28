@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.封装函数实现深拷贝
+
+
+    // 2.手写数组去重
+
+
+    // 3.按照js执行顺序写出打印结果
+    var arr = [{ method: 'get', fn: function () { console.log(this) } }];
+
+    Array.prototype.forEach = function (cb) {
+      var obj = {}
+      for (var i = 0; i < this.length; i++) {
+        // var { method, fn } = this[i]
+
+        var method = this[i].method
+        var fn = this[i].fn
+
+        cb.call(this, fn.bind(obj), method)
+      }
+    };
+
+
+    arr.forEach(function (fn, method) {
+      fn()
+      console.log(this)
+    })
+
+
+    // 4.从1和2处填写内容让下面代码支持 a.name = “name1”; b.name = “name2”;
+    function obj(name) {
+      // if (!name) {
+      //   this.name = obj.fn
+      //   return
+      // }
+      return {
+        name
+      }
+    }
+    obj.prototype.name = "name2";
+    var a = obj("name1");
+    var b = new obj;
+    console.log(a.name)
+    console.log(b.name)
+
+
+   /*  5.
+    function Foo() {
+      getName = function () { console.log(1); };
+      return this;
+    }
+    Foo.getName = function () { console.log(2); };
+    Foo.prototype.getName = function () { console.log(3); };
+    var getName = function () { console.log(4); };
+    function getName() { console.log(5); }
+    //请写出以下输出结果：
+    Foo.getName();
+    getName();
+    Foo().getName();
+    getName();
+    new Foo().getName();
+ */
+    // var q = 5
+    // var q1 = ++q
+    // console.log(q)
+    // console.log(q1)
+
+    // 6.
+    // var a = 5
+    // var b = a < 6 ? (a > 7 ? a-- : (++a && a > 3 ? ++a : --a)) : a = 8
+    // console.log(a)
+    // console.log(b)
+
+
+    // // 7.
+    // var c = 'undefined' && 0 || (8 > 6 && 7 < 6 || (3 < 4 && 5 < 6))
+    // console.log(c)
+
+
+    8.
+    function a() {
+      console.log(6)
+    }
+    console.log(a)
+    a();
+    a = 3;
+
+    console.log(a)
+    a = 6;
+    a();
+
+    // 9. 
+    // function test(person) {
+    //   person.age = 18
+    //   person = {
+    //     name: 'yyy',
+    //     age: 16
+    //   }
+    //   return person
+    // }
+    // var p1 = {
+    //   name: 'yck',
+    //   age: 17
+    // }
+    // var p2 = test(p1)
+    // console.log(p1)
+    // console.log(p2)
+
+
+    // 10
+    /* function foo() {
+      console.log(this.a)
+    }
+    var a = 1
+    foo()
+    var obj = {
+      a: 2,
+      foo: foo
+    }
+    obj.foo()
+
+    var c = new foo() */
+
+    // 11.谈一谈闭包（产生条件，是什么，作用，缺点）
+    // 函数嵌套 内部引用外部函数中的变量  外部函数调用
+    // 是一个引用关系 （对象） 对象中储存着引用外部函数的变量名（key）和变量值（value）
+    // 外部使用函数内部中的变量
+    // 内存泄漏  白屏
+
+    // 12.写出undefined的常见场景（五项）
+    // 声明变量不赋值  对象没有的属性或方法   数组中不存在的下标  实参和形参  函数调用无返回值
+
+    // 13.谈一谈原型和原型链
+    // 原型分为隐式原型和显示原型   函数才有prototype  对象就有__proto__
+    // 对象的隐式原型指向构造函数的显示原型
+    // 所有显示原型对象都是Object的实例
+
+
+    // 14.谈一谈面向对象
+      // 万物皆对象
+      // 封装继承多态
+
+
+
+
+
+
+      // 封装
+      // 把特定的某一个事物封装为对象  
+      // 例：人  肤色  名字  年龄
+      //        跑步   吃饭
+
+
+      // 继承
+      // 让子类的原型  =  父类的一个实例          原型继承主要是让子类继承父类的方法的
+      // 子类中Dog.call(this,name,age,color);   借助构造函数继承  专门用来继承父类中的属性的
+
+
+      // 多态
+      // 方法重写  其实就是重写父类的方法
+      // 方法重载，根据传递参数不同，函数具有不同的功能
+
+      // 15.this常见的场景写出五项
+      // 普通函数 对象方法 构造函数 事件回调 定时器 数组方法 call apply bind 箭头函数
+  </script>
+</body>
+
+</html>

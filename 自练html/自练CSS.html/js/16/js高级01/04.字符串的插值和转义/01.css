@@ -1,0 +1,5 @@
+#outer {
+  width: 20px;
+  height: 100px;
+  background: url("{@url}01.png");
+}

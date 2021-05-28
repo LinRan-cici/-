@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // setInterval(function () {
+        //没有设置参数值时，是[0-1)的随机数
+        /*  console.log(Math.random()); */
+
+        //生成[10-256)的整数随机数
+        // console.log(Math.floor(Math.random()*246 +10));
+
+        //生成[0-256)的整数随机数
+        //   console.log(Math.floor(Math.random() * 256));
+        // }, 100);
+
+        //封装一个生成[a,b)随机正整数
+    
+            function getRandom(a, b) {
+                return Math.floor(Math.random() * (b - a) + a);
+                
+            }    
+            console.log(getRandom(5, 20));
+           
+           
+
+    </script>
+</body>
+
+</html>

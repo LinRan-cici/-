@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   /* 
+   等于判断：
+   相等（==）；可以进行类型转换。如果类型转换后值相等，则为true
+   不等（!=）
+   全等(===):先比较书记类型，如果数据类型不同，直接返false,类型相等，再继续比较值
+    不全等(!===)  如果数据类型不等，则返回true
+
+   */
+   console.log(1 == "1"); //t
+        console.log(1 === "1"); //f
+
+        console.log(1 != "1"); //f
+        console.log(1 !== "1"); //t
+
+
+        console.log(null == 0); //f
+        console.log(null == 1); //f
+        console.log(null == true); //f
+        console.log(null == false); //f
+        console.log(null == ""); //f
+        console.log(null == "null"); //f
+        console.log(null != 0); //t
+        console.log(null !== 0); //t
+
+        //小于 大于等判断如果有null是可以类型转换的
+        console.log(null <= 0); //t
+        console.log(null > 0); //f
+        console.log(null == NaN); //f
+        console.log(null == null); //t
+
+
+        console.log(null == undefined); //t
+        console.log(true == 1); //t
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <!--
+        js引入
+        标准是放置在body的关标签上边，
+        可以放head标签中，在不做处理时，DOM不会被解析
+        还可以放body关标签的下边，浏览器解析时还是会把script放在body关标签的上边
+        -->
+
+
+
+    <script>//获取box元素
+        var aBox = document.getElementById("box");
+        //把查询的box打印出来
+        console.log(aBox);//null
+    </script>
+
+
+
+    <!-- 外部引入js
+        还是放在body关标签的位置，用script标签引入
+           
+     -->
+    <script src="./01.js">
+        var a = 4  //无效
+    </script>
+
+
+    <!-- 当script标签已经用外部加载了，在script里书写js无效 -->
+
+    <!-- 
+         defer和async属性
+
+            默认情况下，遇到js先下载js,下载完立马运行；
+
+            defer:（异步+延迟)，遇到js异步下载（不停止解析html)，等html全部解析完后，立马运行js;
+            在引入多个js文件时，还是按照书写顺序运行；
+
+            async:(异步),遇到js异步下载，下载完立马运行；
+            因下载完立马运行，文件大小不一，可能不按照书写顺序运行；
+
+      -->
+    <script src="./01.js"></script>
+
+    <!-- 
+          调试代码 
+          弹窗：alert（） 
+          弹出一个警告框，阻止代码运行；
+       -->
+    <script>("hello hello");</script>
+
+    <!-- 
+          控制台打印:
+          cansole.log()
+       -->
+    <script>
+        cansole.log(1);
+        cansole.log(1 / 4);
+        cansole.log(cansole);
+    </script>
+
+    <!-- 
+         document.write();
+         在文档中书写内容，
+         当文档的内容加载完成，再书写，可能会覆盖原来的内容
+        -->
+    <script>
+        document.write("hello peihua")
+        document.write("hello haijing")
+    </script>
+
+    <!-- 
+            变量
+            变量相当于容器，变量名相当于容器上的标签，通过标签名可以查询变量的值
+            变量是松散类型（弱类型，动态类型），我们通过var即可声明变量，也可以随意更改变量的值 
+             
+            声明变量：
+            var + 变量名 = 值；
+                   = 是赋值
+            - 可以随意更改变量的值
+            - 可以多次声明同一个变量
+            - 可以用逗号操作符 一次声明多个变量
+
+            标识符指的是：变量，属性名，函数名，函数的参数名
+            变量命名的规范：
+            -以字母、￥、—开头
+            -中间不能有空格
+            -中间可以是数字、字母
+            -不能使用关键字、保留字命名
+            -区分大小写
+            
+         -->
+
+    <script>var a = 1;// 把1赋值给a
+        b = 1 + 1;//赋值操作符的优先等级非常低（只有逗号比他更低），所以一般先执行 =右边，得到值再赋给左侧变量
+
+        var a = 1;
+        b = 2;
+        c = 3;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        a = "happy";
+        console.log("happy");
+    </script>
+
+    <!-- 
+        其他语法
+        这是一个多行注释，可以在里面随意换行书写，内容不会被js解析
+    
+
+    //单行注释
+
+    //语句结束时以分号结尾，如果以大括号结尾可以不用写分号
+    
+    if (a > 3){
+        }
+    </script>
+    -->
+    <!-- 
+         交换两个变量的值
+      -->
+    <script>
+        a = 1;
+        b = 3;
+    </script>
+    <!-- 
+        方法一 
+        var temp= a;//用一个临时变量，保存a的值
+            a= b;//把b的值赋值给a
+            b= temp;//把临时变量的值赋值给b-->
+
+    <!-- 
+        方法二
+        var a= a+ b;//4
+            b= a- b;//1
+            a= a- b; //3
+     -->
+
+    <!--  
+         声明变量 保存不同的值-->
+
+    <script> a = 1;//number
+        b = "hello";//string
+        c = ture;//bOOlean
+        d = null;//null
+        e; //defined
+        f = [];//object
+        g = {};//object
+        h = function () { }//object
+    </script>
+
+    <!-- 检测数据类型
+        typeot:检测数据的类型并返回
+        typeof(数据) 或者  typeof 数据
+
+        typeof可以检测的值有：
+            - 检测的值不一定准确
+            - typeof能得到的值有：string boolear number object fuction undefined
+            - 能准确检测的值有：string boolear number undefined
+
+            js数据类型
+            - 5种基本类型：string number boolear null undefined;
+            - 1种复杂类型：object( 对象 数组 函数) 
+
+     -->
+    <script>
+        var re = typeof a;//变量接收返回值
+        console.log(re);//打印返回值
+
+        console.log(typeof b);//直接打印返回的值
+        console.log(typeof c);//直接打印返回的值
+        console.log(typeof d);//直接打印返回的值
+        console.log(typeof e);//直接打印返回的值
+        console.log(typeof f);//直接打印返回的值
+        console.log(typeof g);//直接打印返回的值
+        console.log(typeof (h));//直接打印返回的值
+    </script>
+
+
+    <!-- undefined类型
+        - undefined数值类型只有一个值，就是undefined
+        - undefined代表未定义，一般情况下我们不会设置一个值为undifined,而是一种错误的结果undefined
+     -->
+
+    <script>
+        var a;
+        console.log(a);//undefined
+    //console.log(b);//这个不是undefined,直接报错
+    </script>
+
+    <!-- 场景一；
+     声明变量没有赋值，当使用变量时，变量的值就是undefined -->
+    <script>
+        var b;
+        console.log(b);//undefined
+    </script>
+
+    <!-- 场景二
+    调用函数时，参数没有上传，就会返回undefined -->
+
+    <script>
+        //封装一个函数，随时调用可以将函数内部代码运行
+        function self(name, age, sex) { //设置形参(相当于设置变量)
+            console.log("我的姓名是" + name);//使用变量
+            console.log("我的年龄是" + age);
+            console.log("我的性别是" + sex);
+        }
+
+
+
+        sef("lihua", 18, "nan");//函数调用 并传参
+        self("zhangsan", 26);
+    </script>
+
+
+    <script>
+        //场景三
+        //定义一个对象
+        var student = {
+            name: "haijing",
+            sex: "nan",
+            age: "35",
+            hobby: "fishing"
+        }
+        //获取对象的内容
+        console.log(student.age)
+        console.log(student.number)
+
+        //场景四
+        //封装函数 计算两个值的和
+        function add(a, b) {
+            console.log(a + b);//这个函数仅仅为打印结果，不能获得值
+            //如果你需要拿到函数的执行结果 需要把执行结果返回，
+            //return a + b;返回一个结果
+        }
+
+        //调用函数
+        var re = add(1, 2);
+        console.log(re)
+    </script>
+
+    <!-- null类型的值就一个 是null 
+        代表空的意思
+    -->
+
+    <!-- 场景一
+    声明一个变量，未来才赋值的时候，可以把变量的值设置为null
+ -->
+    <script>
+        var a = null;
+        a = 4;
+    </script>
+    <!-- 场景二
+    当函数需要参数，但是不想传递的时候，可以传递一个null -->
+    <script>
+        student(name, sex, age) {
+            console.log("我的姓名是" + name)
+            console.log("我的性别是" + sex)
+            console.log("我的年龄是" + age)
+
+        }
+        student("haijing", null, 23)
+    </script>
+
+    // 场景三
+    // 把一个对象变成垃圾对象。可以将变量赋值为null
+    <script>
+        var m = {
+
+        }
+        console.log(m)
+        //一旦一个对象不被变量引用的时候，这个对象就不可能被使用，就变成了垃圾对象
+        m = null;
+        //场景四
+        //原型链的重点是null
+    </script>
+    <!-- //进制 
+    二进制
+    0 1 10 11 100 101 110 111 1000 1001 1010 1011 1100 1101
+    八进制
+    0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 
+    十进制
+    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+    十六进制
+    0 1 2 3 4 5 6 7 8 9 a b c d e f 10 11 12 13
+
+    二进制换十进制
+    1010
+    0*2^0+1*2^1+0*2^2+1*2^3=9
+
+    十进制换二进制
+    13
+    13/2 得6余1
+    6/2 得3余0
+    3/2 得1余1
+    1/2 得0余1
+
+
+    
+    -->
+
+
+
+
+
+</body>
+
+</html>

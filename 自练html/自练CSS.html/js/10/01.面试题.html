@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a={
+            n:1
+        };
+        var b = a;
+        //先执行a.x  赋值的时候a.x已经运行过了 所以a的最新值不会重新赋值给a.x
+        a.x = a = {
+            n:2
+        };
+
+        console.log(a.n, b.n);//2  1
+        console.log(a.x, b.x);//underfined n:2
+        
+    </script>
+</body>
+</html>

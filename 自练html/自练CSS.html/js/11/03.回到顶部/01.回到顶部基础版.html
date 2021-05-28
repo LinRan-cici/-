@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+           height:3000px;
+        }
+
+        #box {
+          width:100px;
+          height: 50px;
+          line-height: 50px;
+          border-radius: 50%;
+          position:fixed;
+          bottom:20px;
+          right: 20px;
+          background-color: plum;
+          font-size: 18px;
+          text-align: center;
+          font-weight: blod;
+          display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">回到顶部</div>
+    <script>
+        var oBox = document.querySelector('#box');
+
+        //绑定系统滚动条事件。当滚动条只要移动就触发 触发以后会判断
+        window.onscroll = function (){
+            var nowScroll = window.pageYOffset;
+
+            //实时判断
+            if(nowScroll > 500){
+               oBox.style.display ="block";
+
+            } else {
+                oBox.style.display = "none";
+            }
+        }
+        //点击回到顶部按钮，滚动条直接回到顶部
+        oBox.onclick =function(){
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>

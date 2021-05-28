@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  top: 0;
+  list-style: none;
+}
+#outer {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt">
+    <script>
+        /* 
+        表单事件：
+        input:当表单的内容改变时触发
+        change:当表单内容发生变化并且失去焦点时触发
+        
+        */
+ 
+        var oIpt = document.getElementById('ipt');
+
+        oIpt.oninput = function(){
+            console.log("表单改变了")
+        }
+
+        oIpt.onchange = function(){
+            console.log("表单改变了且失去了焦点")
+        }
+
+    </script>
+</body>
+</html>

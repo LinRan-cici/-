@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .outer {
+            width: 300px;
+            border: 1px solid #000;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .inner {
+            overflow: auto;
+        }
+
+        .con {
+            width: 1800px;
+            display: flex;
+        }
+
+        .con img {
+            width: 300px;
+            height: 200px
+        }
+
+        .left,
+        .right {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: cadetblue;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .left {
+            left: 10px;
+        }
+
+        .right {
+            right: 10px;
+        }
+
+        .list {
+            display: flex;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .list li {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: rgba(6, 225, 225, .3);
+            margin: 5px;
+        }
+
+        .list li.active {
+            background-color: rgba(6, 225, 225, .9);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">
+            <div class="con">
+                <img src="../type.html/1.jpg" alt="">
+                <img src="../type.html/2.jpg" alt="">
+                <img src="../type.html/3.jpg" alt="">
+                <img src="../type.html/4.jpg" alt="">
+                <img src="../type.html/5.jpg" alt="">
+            </div>
+
+            <p class="left">&lt;</p>
+            <p class="right">&gt;</p>
+
+            <ul class="list">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var oInner = document.querySelector('.inner');
+        var oConimgs = document.querySelectorAll('.con img');
+        var oLeft = document.querySelector('.left');
+        var oRight = document.querySelector('.right');
+        var oLis = document.querySelectorAll('.list li')
+        var autoTimer = null,
+            moveTimer = null;
+
+
+
+
+        //封装通用动画
+        function move() {
+            //控制滚动条走的时候以动画的方式走到终点
+            //起始位置
+            var startLocation = oInner.scrollLeft;
+            //结束位置
+            var endLocation = i * oConimgs[0].offsetWidth
+            //起始步数
+            var startStep = 0;
+            //结束步数
+            var endStep = 30;
+            //每一步走的距离
+            var everyStep = (endLocation - startLocation) / 30;
+
+            moveTimer = setInterval(function () {
+                startStep++;
+                if (startStep >= endStep) {
+                    clearInterval(moveTimer);
+                }
+                startLocation += everyStep;
+                oInner.scrollLeft = startLocation;
+            }, 30)
+
+        }
+
+        //封装自动走动画
+
+        function autoMove() {
+            autoTimer = setInterval(function () {
+                //为了防止本次定时器运行时 上一次的动画定时器还没有结束，则需要清空
+                //每隔2秒换张图
+                i++;
+                //判断i的临界值
+                if (i > oConimgs.length - 1) {
+                    i = 0;
+                }
+
+                move();
+                 
+                list();
+
+            },2000)
+        }
+        //封装下标设置
+        function list() {
+            //控制下标
+            // 先清 再给下标
+            oLis.forEach(function (item, index) {
+                item.classList.remove("active");
+            })
+            oLis[i].classList.add("active");
+
+        }
+
+        //封装清定时器
+        function clear() {
+            //每次点击要把自动走和动画清掉
+            clearInterval(autoTimer);
+            clearInterval(moveTimer);
+        }
+
+        //初始化一个变量代表当前是哪张图的下标
+        var i = 0;
+        //刚进入网页要自动走
+        autoMove();
+
+        //右键点击
+        oRight.onclick = function () {
+            clear();
+            i++;
+            //判断i的临界值
+            if (i > oConimgs.length - 1) {
+                i = 0;
+            }
+
+            move();
+
+            list();
+
+            autoMove();
+
+
+        }
+
+        oLeft.onclick = function () {
+            clear();
+            i--
+            if (i < 0) {
+                i = oConimgs.length - 1;
+            }
+
+            move();
+
+            list();
+
+            autoMove();
+        }
+
+        oLis.forEach(function (item, index) {
+            item.onclick = function () {
+                clear();
+
+                oLis.forEach(function (item, index) {
+                    item.classList.remove("active");
+                })
+
+                this.classList.add("active");
+                i = index;
+
+                move();
+
+                autoMove();
+
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="box">
+        <li class="show">1</li>
+        <li>2</li>
+        <li class="show">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        //通过ID
+          var oBox = document.getElementById("box");
+          console.log(oBox);
+    
+
+          //通过标签名
+           //getElementsByTagName 得到的是：HTMLColletion对象 伪数组
+          //获取的是一个集合，而不是某一个DOM节点，所以我们需要通过下标来获取
+          var oLis =oBox.getElementsByTagName("li");
+          console.log(oLis);
+
+          //通过类名获取(IE678不兼容)
+           //getElementsByClassName 得到的是：HTMLColletion对象 伪数组
+          //获取的是一个集合，而不是某一个DOM节点，所以我们需要通过下
+          var oShows = oBox.getElementsByClassName("show")
+          console.log(oShows);
+
+
+
+        
+        
+        
+
+    </script>
+</body>
+</html>

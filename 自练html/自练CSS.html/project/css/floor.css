@@ -1,0 +1,67 @@
+.floor{
+   margin:15px;
+}
+.floor .home1{
+    width:1200px;
+    margin: 0 auto;
+}
+.floor .home1 .home-title{
+  float: left;
+  height:47px;
+  width:1200px;
+   
+}
+.floor .home1 .home-title h3{
+    float: left;
+    font-size: 20px;
+    color:#c81623;
+    line-height: 30px;
+    margin:9px 0;
+    
+
+}
+.floor .home1 .home-title ul{
+    float:right;
+    height: 47px;
+    padding: 0;
+    list-style-type: none;
+    margin:10px 0 0;
+    
+}
+.floor .home1 .home-title ul li{
+    float: right;  
+    border-left:1px solid #666; 
+    line-height:18px ;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.floor .home1 .home-title ul #first{
+    border-left:none;
+}
+.floor .home1 .home-title li.active a {
+    color: #e1251b;
+}
+.floor .home1 .home-title li.active:hover a{
+    color:lightgreen;
+}
+.table-content{
+    border-top: 2px solod #c81623;
+    border-bottom: 1px solid  #e4e4e4;;
+} 
+.floor1{
+    width:1200px;
+    height:360px;
+    margin: 0 auto;
+
+}  
+.blockgray{
+    width:210px;
+    height:100%;
+    background-color: #f7f7f7;;
+}
+.blockgray ul{
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+    
+}

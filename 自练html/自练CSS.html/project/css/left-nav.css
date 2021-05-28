@@ -1,0 +1,86 @@
+.main1 {
+    width: 1300px;
+    height: 464px;
+    margin:0 auto;
+    position: relative;
+}.left-nav{
+    width:210px;
+    height: 461px;
+    /* border: 1px solid red; */
+    margin-left:50px; 
+    background-color: #FAFAFA;
+}
+.left-nav ul{
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    border-left: 1px solid transparent;
+    
+}
+.leftmenu li{
+    list-style-type: none;
+    font-size: 14px;
+    font-weight: 400;
+   line-height: 30px;
+  
+}
+.leftmenu li a{
+    color: #333;
+    text-decoration: none;
+}
+
+.leftmenu{
+    position: relative;
+    
+}
+.second-menu{
+    position: absolute;
+    display: none;
+    width:730px ;
+    left: 210px;
+    overflow: hidden;
+    top:0px;
+    bottom: -18px;  
+    background-color:#F7F7F7 ;
+    border: 1px solid #E4E4E4;
+    z-index: 999;
+    font-size: 12px;
+}
+
+.list{
+    padding: 0;
+    margin:0;
+    height: 30px;
+    /* border: 1px solid red; */
+    padding-left: 20px;
+}
+li .last-li{
+   padding-bottom: 30px;
+}
+    
+.list dt{
+    font-weight: bold;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+    margin: 0;
+    /* padding: 0; */
+   ;
+}
+.list dd{
+    display: inline-block;
+    height: 15px;
+    line-height:15px;
+    border-left: 1px solid #ccc;
+    margin: 0;
+    padding: 0 5px;
+}   
+
+.left-nav a:hover {
+    text-decoration: underline;
+    color: lightgreen;
+}
+
+ .leftmenu li:hover div{
+    display:inline-block;  
+}

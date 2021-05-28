@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 赋值操作简写
+        写法：a = a + b;
+        简写：a += b;
+
+        其他 a -= b;
+             a *= b;
+             a /= b;    
+
+        */
+
+        //单纯的累加2  不考虑返回值
+        var count = 2;
+        // count = count + 1
+        // count += 1
+
+        count++
+        // ++count 
+        console.log(count)
+         
+        //count -=-2;
+        // console.log(count)//4
+
+
+        //有返回值的情况
+        var a = 1;
+        // var b = a++;
+        var b = ++a;
+        // console.log(b)
+        console.log(++a)//3
+       
+        var a = 2;
+        var b = a++ + 3 + ++a + a + ++a + 2 + a++//2+3+4+4+5+2+5=25
+        console.log(b)//25
+    </script>
+</body>
+
+</html>

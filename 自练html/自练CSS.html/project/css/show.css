@@ -1,0 +1,35 @@
+.show .py-container{
+    width:1200px;
+    margin: 0 auto;
+}
+
+.show .today{ 
+    width:100%;
+    background-color: #eaeaea;
+    height: 165px;
+    display: inline-block;
+    padding:0;
+    list-style-type: none; 
+}
+
+.show .today .time{
+    width: 200px;
+    height: 165px;
+    text-align: center;
+    font-size: 18px;
+    color:#fff;
+    background-color: #5C5251;
+    box-sizing: border-box;
+}
+
+.show .today li{   
+    float: left;
+ }
+
+.show .today .clock{
+   padding: 30px 0;
+}
+
+
+
+

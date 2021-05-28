@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         
+        //创建数组的种类
+        //普通数组
+        var arr = [1,2,3,4];
+        console.log(arr[0]);//1
+        console.log(arr[1]);//2
+        console.log(arr[1+1]);//3
+        console.log(arr[5]);//undefined
+
+
+        //多维数组
+        var arr1 = [1, [2,3],[4,5,6]];//二维
+
+        var arr2 = [1, [2, 3, [4, 5, [6], 7], 8], 9]
+        console.log(arr1);
+        console.log(arr2);
+        //读取多维数组的值
+        console.log(arr1[2][0]);//4
+        console.log(arr2[1][2][0]);//4
+
+        //空位数据
+        //数组内部如果以逗号为结尾，则忽略，不会当成一个值
+        var arr3 = [1,2,,3,4,5,];
+        console.log(arr3);
+        //空位数组的的值是undefined
+        console.log(arr3[2]);//undefined
+
+        //伪类数组 (伪数组 类数组)
+        //它不是数组，只不过是像数组
+        //伪数组其实是对象，但是符合两个特征 1.key是从0开始自然递增，2.拥有length属性表示长度
+        
+        var likeArr = {
+            0 :"a",
+            1 :"b",
+            2 :"c",
+            3 :"d",
+            length:4//扩展的属性，不是数组值的一份子
+          
+    
+        }
+        console.log(likeArr);
+        //伪数组的获取和数组类似
+        console.log(likeArr[2])//c
+        
+        
+        
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../type.html/5a0d5a3521a3402f94fa824d700e1749.jpg" alt="">
+    <script>
+        /*
+        window.onloaded:
+       当DOM节点和所有资源全部加载完毕以后触发
+
+       DOMContent.onloaded:
+       当DOM节点加载完毕即可触发 
+        */
+
+        var oImg = document.querySelector('img');
+        console.log(oImg)
+        console.log(oImg.offsetWidth)//0
+
+        window.addEventListener("DOMContentonloaded", function () {
+            console.log(oImg)
+            console.log(oImg.offsetWidth)//0
+        })
+
+        window.onload = function () {
+            console.log(oImg)
+            console.log(oImg.offsetWidth)//1014
+        }
+    </script>
+</body>
+
+</html>

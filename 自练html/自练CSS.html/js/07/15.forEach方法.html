@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        forEach
+        -专门用来遍历数组
+        -forEach接收一个回调函数作为参数，数组的值会依次的进入函数执行
+        -回调函数可以接受三个参数
+        -参数1 ：当前进入函数的数组的元素
+        -参数2：当前进去函数的数组的下标
+        -参数3：当前数组的引用
+
+        -空位数组的空位不会进入foreach 
+        -foreach没有返回值
+        -foreach中的回调函数的this指向window
+
+        
+        
+        
+        */
+      /*  var arr = ["a", "b", "c", "d", "e"];
+       var re = arr.forEach(function(item, index, array){
+         console.log(item, index, array, this);
+
+         console.log(arr ===array);//true
+       }); */
+      
+        /*  console.log(re);//undefined   没有返回值*/
+
+         var arr = [11, 14, 15, 43, 32, 23];
+         var newArr = [];
+         arr.forEach(function(item,index){
+            //newArr.push(item+1)
+           newArr[index] = item +1;
+         });
+           console.log(newArr);
+
+       
+    </script>
+</body>
+</html>

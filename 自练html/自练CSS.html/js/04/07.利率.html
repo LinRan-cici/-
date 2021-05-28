@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //固定金额：
+        var price = 10000;
+        //确定目标：
+        var finallyPrice = 2 * price;
+        //输入利率
+        var scale = prompt("请输入利率(10.1-1.5之间)")
+
+        //计算多少年能让本金变成两倍及以上
+        var num = 0;//累加年份 
+        //判断只有符合条件就一直累加
+        while (price < finallyPrice) {
+            num++;
+            price *= scale;
+        }
+        console.log(num)
+
+    </script>
+
+</body>
+
+</html>

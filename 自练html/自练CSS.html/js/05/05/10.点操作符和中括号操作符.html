@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        注意：对象的属性其实都是字符串，只不过可以省略引号
+        点操作符：
+        - 成员访问
+        - 当.去获取一个对象的属性的时候，点后边跟的也是一个字符串，只不过必须省略引号
+        - 点操作符可以访问对象属性，但是一些特殊的属性无法进行获取(key是不规则字符串，key是一个 个变量) 
+        
+        */
+        var obj = {
+            name : "laowang",
+            age : 18,
+            "content-type" :"x-www-form-application"
+        }
+        console.log(obj);
+       // 当keyd的值是一个不规则的字符串的时候无法获取
+       // console.log(obj.content-type);
+
+        //当key被一个变量保存
+       var a = "age";
+       //console.log(obj.a);//点后面跟的是字符串，并不会解析变量，这么写获取的是obj的a的属性
+ 
+       //中括号操作符：
+       console.log(obj[name]) //不能获取到name的属性，只是把name当成变量了
+
+       //一般情况下 点和中括号通用
+       console.log(obj["name"]);//获取name的属性
+       console.log(obj.name);//获取name的属性
+
+       //在点不能使用的情况下 (key是不规则字符串 key是一个变量)
+       console.log(obj["content-type"]);//x-www-form-application
+       console.log(obj[a]);//18
+
+       //使用规范：
+       //- 一般情况下使用点操作符
+       //-  点操作符不能使用 则使用中括号操作符
+
+
+
+
+    </script>
+</body>
+</html>

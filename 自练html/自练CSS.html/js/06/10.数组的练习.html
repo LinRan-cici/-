@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+     /* 
+     使用for 把1-100的整数以二维的形式储存在数组中
+     
+     [
+         [1..10]
+         [11...20]
+         [21..30]
+          ......
+         [91-100]
+
+     ]
+     */
+      
+     //创键一个新数组
+      var newArray = [];
+      for (var i = 0; i < 10;i++){
+          //每次遍历创建一个值
+          var innerArr = [];
+          for (var j = 0 ;j < 10;j++){
+               innerArr[j] = i*10 +j+1
+          }
+          newArray[i] = innerArr;
+      }
+        console.log(newArray);
+ </script>   
+</body>
+</html>

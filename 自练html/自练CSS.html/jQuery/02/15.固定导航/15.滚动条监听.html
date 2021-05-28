@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      img {
+        vertical-align: top;
+      }
+
+      .main {
+        margin: 0 auto;
+        width: 1000px;
+        padding-top: 10px;
+      }
+
+      .fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top" id="topPart">
+      <img src="images/top.png" alt="" />
+    </div>
+    <div class="nav" id="navBar">
+      <img src="images/nav.png" alt="" />
+    </div>
+    <div class="main" id="mainPart">
+      <img src="images/main.png" alt="" />
+    </div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+      //获取滚动条，注册滚动条事件，
+      // 在回调函数中监测滚动条滚过的height，大于一定的高度时，nav固定定位，小于一定的高度nav移除固定定位
+      $(window).scroll(function(){
+        //获取滚动条滚过的距离
+        var height = $(window).scrollTop()
+        var topHeight = $('.top').height()
+
+        if(height >= topHeight){
+          //添加fixed
+          $('.nav').addClass('fixed')
+        $('.main').css('margin-top',$('.nav').height())
+        }else{
+          //移除fixed
+          $('.nav').removeClass('fixed')
+          $('.main').css('margin-top',0)
+        }
+      })
+    </script>
+  </body>
+</html>

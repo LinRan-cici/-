@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        &&:与(一假即假)
+        表达式a && 表达式b:
+        -先执行表达a,看表达式a的返回值
+        -如果表达式a返回的值是false或者类型转换为false,则逻辑与执行结束，返回表达式a的值
+        -如果表达式a返回true或者类型转换为true,则执行表达式b，并直接返回b的返回值
+
+        ||:或(一真即真)        
+        表达式a || 表达式b 
+        -先执行表达a,看表达式a的返回值
+        如果表达式a返回的值是true或者类型转换为ture,则逻辑与执行结束，返回表达式a的值
+        -如果表达式a返回false或者类型转换为false,则执行表达式b，并直接返回b的返回值
+
+        !:非
+        ！a
+        -一定返回布尔值
+        -把表达式a转为布尔值 然后取反
+
+        console.log(0 && 1); //0
+        console.log(1 && 4); //4
+        console.log(1 && 0); //0
+        console.log(1 || 0); //1
+
+         console.log(true || false); //t
+        console.log(false || false); //f
+        console.log(false && false); //f
+        console.log(false && true); //f
+
+
+
+        var a = 2;
+        var b = 3;
+        var re = (a < b) && (a = 5);
+        console.log(a); //5
+        console.log(re) //5
+
+        var a = 6;
+        var b = 3;
+        var re = (a < b) && (a = 5);
+        console.log(a); //6
+        console.log(re) //f
+
+        var a = 2;
+        var b = 3;
+        var re = (a < b) || (a = 5);
+        console.log(a); //2
+        console.log(re) //t
+
+        var a = 6;
+        var b = 3;
+        var re = (a < b) || (a = 5);
+        console.log(a); //5
+        console.log(re) //5
+
+
+
+        console.log(!true); //f
+        console.log(!0); //t
+        console.log(!""); //t
+        console.log(!"123"); //f
+        console.log(!undefined); //t
+
+        
+        
+        */
+    </script>
+</body>
+</html>

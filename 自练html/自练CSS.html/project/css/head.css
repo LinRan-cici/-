@@ -1,0 +1,143 @@
+
+
+     body,h1,h2,p,button,input {
+    margin: 0;
+    padding: 0;
+ }
+
+  body {
+    font: 12px/1.3 "Microsoft YaHei", Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+    display: block;
+ }
+  
+ .outer  .top .container {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+ }
+
+ .outer  .top {
+    min-width: 1200px;
+    background-color: #EAEAEA;
+    height: 30px;
+    line-height: 30px;
+ }
+
+ .outer .top .container .loginList p {
+    float: left;
+
+ }
+
+ a {
+    text-decoration: none;
+    color: #666;
+ }
+
+ .outer  .top .container .loginList p a,
+ .outer  .top .container .typeList a {
+    padding: 0 10px;
+ }
+
+ .outer .top .container .loginList p a,
+ .outer .top .container .typeList a {
+    border-right: 1px solid rgb(179, 174, 174);
+ }
+
+ a:hover {
+    color: lightgreen;
+    text-decoration: underline;
+}
+
+ .outer  .top .container .loginList .registe,
+ .outer  .top .container .typeList .last {
+    border-right: 0;
+ }
+
+
+
+ .outer  .top .container .typeList,
+ .outer  .footer .searchArea {
+    float: right;
+ }
+
+ .outer .footer  {
+    width: 1200px;
+    height: 106px;
+    margin: 0 auto;
+    overflow: hidden;
+   
+ }
+
+ .outer .footer .logoArea {
+    margin:0;
+    width:265px;
+    height:106px;
+     float: left;
+   }
+   .outer .footer .logoArea img{
+      width:175px;
+      margin: 25px 45px;
+
+   }
+   .outer .footer .searchArea{
+      width:558px;
+      height:44px;
+      margin-top: 35px;
+   }
+
+
+ .outer .footer .searchArea .searchForm input {
+    box-sizing: border-box;
+    width: 490px;
+    height: 32px;
+    padding: 0px 4px;
+    border: 2px solid #ea4a36;
+    float: left;
+
+ }
+
+ .outer  .footer .searchArea .searchForm input:focus {
+    outline: none;
+ }
+
+ .outer .footer .searchArea .searchForm button {
+    height: 32px;
+    width: 68px;
+    background-color: #ea4a36;
+    border: none;
+    color: #fff;
+    float: left;
+    cursor: pointer;
+ }
+
+ .outer .typeNav .container h2 {
+    float: left;
+    font-size: 14px;
+    width: 210px;
+    height: 45px;
+    text-align: center;
+    background-color: #e1251b;
+    color: #ffffff !important;
+
+ }
+
+ .outer .typeNav .container a {
+    margin: 45px 35px;
+
+ }
+
+ .outer .typeNav {
+    border-bottom: 2px solid #E1251B;
+    width: 100%;
+    min-width: 1200px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+
+ }
+
+ .outer .typeNav .container {
+    margin: 0 auto;
+    width: 1200px;
+
+ }

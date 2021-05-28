@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function check() {
+            var userName = prompt("请输入账号");
+            var passWord = prompt("请输入密码");
+
+           if(userName !=="laoeang" || passWord !=="888888"){
+               //在函数内部又调用自身，我们把这种操作叫递归
+               check();
+           }else{
+               alert("登录成功");
+           }
+
+        }
+             check();
+    </script>
+</body>
+
+</html>

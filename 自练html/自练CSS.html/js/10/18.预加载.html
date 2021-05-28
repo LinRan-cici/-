@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #progress {
+            width: 500px;
+            height: 50px;
+            border: 1px solid red;
+        }
+
+        .con {
+            height: 50px;
+            width: 0%;
+            background-color: hotpink;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="progress">
+        <div class="con"></div>
+    </div>
+    <p>已经加载了<span id="scale">0</span>%</p>
+    <script>
+        var oCon = document.querySelector('.con');
+        var oScrale = document.getElementById('scale')
+        //预加载30张图，首先创建30个img标签
+        var count = 0;//初始化一个计数器
+        for (var i = 1; i < 31; i++) {
+            var oImg = new Image();
+            //把img标签的src设置上去。只要img标签拥有src属性，则立马开始加载图片
+            oImg.src = "../type.html/" + (i < 10 ? "0" + i : i);
+            oImg.onload = function(){
+                count++;
+                //每次累加计算比例
+                var scale = count / 30;
+
+                //对比例取整
+                scale = parseInt(scale * 100)
+                console.log(scale);
+
+                //把百分比比例设置给内部元素的宽度
+                oCon.style.width = scale + "%";
+
+                oScale.textcontent = scale;
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <div id="box"></div>
+
+
+    <script>
+
+        var btn = document.getElementById('btn')
+        var box = document.getElementById('box')
+        /*  function getData() {
+             return new Promise((resolve, reject) => {
+                 setTimeout(() => {
+                     // resolve([{ name: 'zs', age: 18 }])
+                     reject ('网络异常')
+                 }, 1000)
+             })
+ 
+         }
+ 
+         btn.onclick = async function () {
+             try {
+                 let res = await getData()
+                 console.log(res)
+                 let str = `<h1>${res[0].name}</h1><h3>${res[0].age}</h3>`
+                   box.innerHTML = str
+             }catch(err){
+               box.innerHTML = `<h1>${err}</h1>`
+             }
+            
+ 
+         } */
+
+        /*  function getDate() {
+             return new Promise((resolve, reject) => {
+                 setTimeout(() => {
+                     resolve([{ name: 'zs', age: 18 }])
+                 }, 1000)
+             })
+         }
+         btn.onclick = async function () {
+                 try {
+                     let res = await getDate()
+                     console.log(res)
+                     let str = `<h1>${res[0].name}</h1><h3>${res[0].age}</h3>`
+                     box.innerHTML = str
+                 }catch(err){
+                     box.innerHTML =`<h1>${err}</h1>`
+                 }
+             } */
+
+        /*  function fn(a,v,c,f){
+             console.log(22)
+             // console.log(arguments)
+             console.log(Array.from(arguments))
+             
+             console.log(Array.from(arguments).slice(1))
+
+         }
+
+         fn(1,5,6,8,9,7,)
+        */
+
+        /* Promise.resolve().then(() => {
+            console.log('promise1');
+            const timer2 = setTimeout(() => {
+                console.log('timer2')
+            }, 0)
+        });
+        const timer1 = setTimeout(() => {
+            console.log('timer1')
+            Promise.resolve().then(() => {
+                console.log('promise2')
+            })
+        }, 0)
+        console.log('start');
+ */
+        const promise1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("success");
+                console.log("timer1");
+            }, 1000);
+            console.log("promise1里的内容");
+        });
+        const promise2 = promise1.then(() => {
+            throw new Error("error!!!");
+        });
+        console.log("promise1", promise1);
+        console.log("promise2", promise2);
+        setTimeout(() => {
+            console.log("timer2");
+            console.log("promise1", promise1);
+            console.log("promise2", promise2);
+        }, 2000);
+
+        
+
+
+    </script>
+</body>
+
+</html>

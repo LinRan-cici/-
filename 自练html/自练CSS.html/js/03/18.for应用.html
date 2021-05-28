@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+  <script>
+     var oBOX = document.getElementById("box");
+     var oLis = oBOX.getElementsByTagName("li")
+     console.log(oLis);
+
+   //给每一个li绑定点击事件，弹出"hello"
+   
+ 
+   console.log(oLis[0])
+   console.log(oLis[1])
+
+   for(var i = 0;i < oLis.length;i++) {
+       oLis[i].onclick = function(){
+       alert("hello");
+   }
+}
+
+
+  </script>  
+</body>
+</html>

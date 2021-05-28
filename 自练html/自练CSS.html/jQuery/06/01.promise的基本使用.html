@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        // let btn = document.getElementById('btn')
+        // btn.onclick = function () {
+        //     //回调函数里嵌套回调函数叫回调地狱
+        //     setTimeout(() => {
+        //         console.log('a的数据请求回来了')
+        //         setTimeout(() => {
+        //             console.log('b的数据请求回来了');
+        //             setTimeout(() => {
+        //                 console.log('c的数据请求回来了');
+        //             },1000)
+        //         }, 1000)
+        //     }, 1000)
+        // }
+
+        btn.onclick = function(){
+            const promise = new Promise((resolve,reject)=>{
+                console.log('promise的同步代码执行了');
+                setTimeout(()=>{
+                    // console.log('异步代码执行成功了')
+                    // resolve('222')//异步成功之后，调用resolve,可以将promise实例的状态有未定义改成成功
+
+                    console.log('异步代码执行失败了')
+                    reject('111')//异步成功之后，调用reject,可以将promise实例的状态有未定义改成失败
+                    console.log(promise)
+                },1000)
+
+               
+            })
+            console.log('同步代码')
+            console.log(promise)
+        }
+
+    </script>
+</body>
+
+</html>

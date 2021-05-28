@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        对属性的增删改查
+        - 增
+        obj.xxx = xxx;
+        - 查
+        obj.xxx
+        - 改
+        直接设置同名属性覆盖即可
+        -删
+        delete obj.xxx
+        delete有一个返回值，true和false代表删除成功或失败
+   
+        */
+
+        var obj = {
+            age: 19,
+            sex:"nv",
+        };
+
+        //- 增
+        obj.name = "peihua";
+        //- 删
+        var re = delete obj.age;
+        //- 改
+        obj.sex = "nan";
+        //- 查
+        console.log(obj);
+        console.log(re);
+
+
+    </script>
+</body>
+
+</html>

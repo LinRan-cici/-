@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #menu {
+            width: 300px;
+            padding-top: 100px;
+        }
+
+        #menu div {
+            position: relative;
+            float: left;
+            width: 150px;
+            height: 28px;
+            line-height: 28px;
+            font-size: 16px;
+            font-weight: bold;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #menu .zina-email {
+        background-color:#0479D6;
+        color: #fff;
+        }
+
+        #menu .zina-email span {
+            position: absolute;
+            width: 0;
+            height:0;
+            border:5px solid transparent ;
+            border-top-color: #0479D6;
+            left: 50%;
+            bottom: -10px;
+            margin-left: -5px;
+        }
+
+        #menu .phone-email {
+            color:#656570;
+            background-color: #ECECEC;
+        }
+
+        #menu .phone-email img{
+             position: absolute;
+             top:-15px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu" class="clearfix">
+        <div class="zina-email">
+            注册新浪邮箱
+            <span></span>
+        </div>
+        <div class="phone-email">
+            注册手机邮箱
+            <img src="img/registerNew.gif">
+        </div>
+    </div>
+</body>
+
+</html>

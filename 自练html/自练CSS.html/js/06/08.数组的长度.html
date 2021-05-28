@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        数组的长度：lengt属性  
+        
+        */
+
+         var arr = ["a","b","c","d","e","f"];
+         console.log(arr.length);//6
+         
+
+         //可以直接设置数组的长度
+         arr.length = 50;
+         console.log(arr);
+
+         //如果设置数组的长度小于原数组的长度，则直接截取到你设置的长度
+
+         arr.length = 2 ;
+         console.log(arr);//["a","b"]
+
+         //尝试删除数组的length属性，删除失败返回false
+         console.log(delete arr.length);//false
+         console.log(arr);//["a","b"]
+         arr.length = 6;
+         console.log(arr);//["a", "b", empty × 4]
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width:3000px;
+            height:4000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        /* 
+        获取整个文档的大小
+           -根元素的offsetHeight
+           - 一般横向不允许出现滚动条，所有获取文档一般都是高度 没有宽度
+        
+        */
+        console.log(document.documentElement.offsetHeight)
+    </script>
+</body>
+</html>

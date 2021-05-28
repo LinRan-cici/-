@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 0;
+        }
+        #f {
+            border: 1px solid green;
+              
+            display: flow-root
+        }
+
+        #f div {
+            float:left;
+            width: 100px;
+            height: 100px;
+        }
+
+        #f div:first-of-type {
+            background-color: brown;
+        }
+        #f div:nth-of-type(2) {
+            background-color:cadetblue;
+        }
+        #f div:nth-of-type(3) {
+            background-color:pink;
+        }
+        #f div:nth-of-type(4) {
+            background-color:blue;
+        }
+        #f div:nth-of-type(5) {
+            background-color:yellow;
+        }
+        #f div:nth-of-type(6) {
+            background-color:lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="f">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </div>
+</body>
+
+</html>

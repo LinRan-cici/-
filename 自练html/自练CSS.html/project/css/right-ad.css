@@ -1,0 +1,142 @@
+.right-ad {
+    position: absolute;
+    width: 250px;
+    top: 0;
+    right: 0;
+    margin-right: 50px;
+}
+
+.right-ad .news {
+    margin-top: 5px;
+    border: 1px solid #e4e4e4;
+    border-bottom: 0;
+}
+
+.right-ad .news .news-title {
+    border-bottom: 1px solid #e4e4e4;
+    
+} .right-ad .news .news-title::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.right-ad .news .news-title .f1 {
+    float: left;
+   
+    /* border:1px solid #E4E4E4; */
+    padding: 5px 10px;
+    margin: 5px 5px 0;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.right-ad .news .news-title .more {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;    
+}
+
+.right-ad .news-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    padding: 5px 15px;
+    line-height: 26px;
+}
+
+.right-ad .lifeservices {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 0;
+    width: 248px;
+    height: 195px;
+    border: 1px solid #e4e4e4;
+    border-bottom: 0;
+}
+
+.right-ad .lifeservices li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 62px;
+    height: 67px;
+    text-align: center;
+    /* vertical-align: middle; */
+    font-size: 12px;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    box-sizing: border-box;
+}
+
+.right-ad .lifeservices li .litter-img {
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    /* border: 1px solid red; */
+    background-image: url("../img/home/icons.png");
+}
+
+.right-ad .lifeservices .wenzi {
+    display: block;
+    height: 15px;
+    line-height:15px;
+    /* border: 1px solid  red; */
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(1) .litter-img {
+    background-position: 0 -5px;
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(2) .litter-img {
+    background-position: -62px -5px;
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(3) .litter-img {
+    background-position:-126px -5px;
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(4) .litter-img {
+    background-position: -190px -5px;
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(5) .litter-img {
+    background-position:0px -76px;
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(6) .litter-img {
+    background-position:-62px -76px;
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(7) .litter-img {
+    background-position:-126px -76px;
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(8) .litter-img {
+    background-position:-190px -76px;
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(9) .litter-img {
+    background-position:0px -146px;
+}
+
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(10) .litter-img {
+    background-position:-62px -146px;
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(11) .litter-img {
+    background-position: -126px -146px;
+}
+
+.right-ad .lifeservices .life-fenlei:nth-of-type(12) .litter-img {
+    background-position: -190px -146px;
+}
+.right-ad .right-foot-ad{
+   
+   margin-top: 10px;
+
+}

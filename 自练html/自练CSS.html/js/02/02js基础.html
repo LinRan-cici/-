@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="ipt">
+    <button id="btn">检测</button>
+    <script>
+        //01.number的类型
+        //1.数字的直接量
+        var num1 = 15;//整数
+        var num1 = -15;//负整数
+        var num1 = 2.3;//浮点数
+        console.log(num1)
+
+        //不同的进制
+        //二进制 以0b开头
+        var num2 = 0b1011;
+        console.log(num2)//使用的时候会把其他进制转为10进制
+
+        //八进制 以0开头
+        var num2 = 012;
+        //八进制新写法 以0o开头
+        var num2 = 0o13;
+        console.log(num2)
+
+        //十六进制 以0x开头
+        var num2 = 0x1f;
+        console.log(num2)
+
+        //3.科学计数法
+        var num3 = 1.02E+33;
+        var num3 = 1.02E33;
+        var num3 = 1.02e33;
+        console.log(num3)
+
+        //4.无穷 Infinity: 无穷大 -infinity: 无穷小
+        var num4 = 1 / 0;
+        console.log(num4)//Infiniyt
+        //当数值大于2的1024次方的时候，js就开始用Infinity表示
+        console.log(2 ** 1023);//求2的1023次方
+        console.log(2 ** 1024);//求2的1024次方
+
+        //5.最大值和最小值
+        console.log(Number.MIN_VALUE);//正数最小值
+        console.log(Number.MAX_VALUE);//正数最大值
+
+        //6.js计算精确问题 2的53次方是最大的精确数字，高于2的53次方，则计算不再精确
+        console.log(2 ** 53);
+        console.log(2 ** 53 + 1);
+        console.log(2 ** 53 + 2);
+        console.log(2 ** 53 + 3);
+        console.log(2 ** 53 + 4);
+        console.log(2 ** 53 + 5);
+
+        //7.NAN not a number 当强制把不能变成数字法的类型转换为数字时，直接变为NAN
+        var num5 = ("a" - 5)
+        console.log("a" - 5);
+
+
+        console.log(typeof num1)
+        console.log(typeof num2)
+        console.log(typeof num3)
+        console.log(typeof num4)
+        console.log(typeof num5)
+
+        //02.isNAN
+        //isNAN()方法 判断一个值（类型转换后）是不是NAN，如果是则返回true,不是则返回fasle
+
+        // 需求：判断元素输入的内容是不是纯数字
+        // 1.获取元素
+        var oIpt = document.getElementById('ipt');
+        var oBtn = document.getElementById('btn');
+        //2.给btn绑定点击事件
+        //绑定事件的格式，给某个元素绑定一个事件，把一个函数赋值给事件属性，当事件触发后，函数会执行
+        oBtn.onclick = function () {
+            //3.点击之后拿到input的内容
+            //获取表单元素的内容 使用获取表单原素的value属性即可
+            var userValue = oIpt.value;
+            console.log(userValue);
+
+            //4.判断input内容是不是纯数字
+            //判断使用if（判断式）{语句1}else{语句2} 如果判断式返回true.则执行语句1，不是，则执行语句2
+            //使用isNAN()检测内容，如果内容不是数字，则先转为数字
+            if (isNaN(userValue)) {
+                //如果返回true 说明userValue不是纯数字
+                alert("输入错误");
+            } else {
+                alert("输入正确");
+            }
+        }
+
+        /* 
+        javascript字符串(string)就是由零个或多个unicode字符组成的字符序列。零个字符表示空字符串
+        
+        1.单引号 和 双引号表示字符串
+        2.单引号内嵌套双引号 双引号内嵌套单引号
+        3.转义符操作
+        4.字符串不允许书写时候换行
+        5.显示操做
+        */
+
+        //1.单引号 和 双引号表示字符串
+        var wen1 = "nihaoma";
+        var wen2 = "_ihaoma";
+        var wen3 = "ni hao ma";
+        console.log(wen1, wen2, wen3)
+
+        //嵌套
+        var wen4 = "培华说:'我真棒'";
+        console.log(wen4)
+
+        //转义符
+        var wen5 = "我要书写一个双引号\"";
+        var wen6 = "我要书写一个杠\\";
+        var wen7 = "我\要\书写\一个双引号";//如果转义不成功 则忽略转义符
+        console.log(wen5, wen6, wen7);
+
+        //书写换行
+        var wen8 = ' <ul id="out">\
+        <li class="item"></li>\
+        <li class="item"></li>\
+        <li class="item"></li>\
+        <li class="item"></li>\
+        <li class="item"></li>\
+     </ul>'
+        console.log(wen8)
+
+        //显示换行
+        var wen9 = "你猜\n我会不会换行";
+        console.log(wen9)
+
+        //字符串长度
+        var wen10 = "12345678acd";
+        console.log(wen10.length)//10
+
+        //字符串每一个值都对应了一个下标，可以通过下标获取字符串的某个值
+        // console.log(wne10.4)点后面跟数字是非法语法，所以要使用中括号
+        console.log(wen10[5])
+
+        /* 
+           Boolean类型：
+           只有两个值：true fasle
+           true为真 faslew为假
+           一般通过判断得到boolean值
+        
+        */
+
+        // 需求：用户点击提交，前端判断用户名和密码是否正确 用户名：laoli 密码：123456
+
+        //过程
+        //1.获取元素
+        var aBtn = document.getElementById('btn2');
+        var aUser = document.getElementById('user');
+        var aPass = document.getElementById('pass');
+
+        //给btn2绑定点击事件
+        aBtn.onClick = function () {
+            //获取账号和密码的值
+            var userValue = aUser.value;
+            var passValue = aPass.value;
+            console.log(userValue, passValue)
+
+
+            //判断账号和密码是否正确
+            //表单的值一定是字符串
+            if (userValue === "laoli") {
+                //继续判断密码
+                if (passValue === "123456") {
+                    //则提示登录成功
+                    alert("登录成功")
+
+                } else {
+                    alert("密码错误")
+                }
+
+            } else {
+                //如果用户名报错，则提示用户名错误
+                alert("用户名错误")
+            }
+
+        }
+
+        //其他类型转boolean
+        //1.number转boolean
+        console.log(Boolean(5));//true
+        console.log(Boolean(-5));//true
+        console.log(Boolean(-5.6));//true
+        console.log(Boolean(Infinity));//true
+        console.log(Boolean(-Infinity));//true
+        console.log(Boolean(NAN));//true
+        console.log(Boolean(0));//false
+        console.log(Boolean(5));//false
+
+        //2.string转boolean
+        console.log(Boolean("5"));//true
+        console.log(Boolean(" "));//true
+        console.log(Boolean(""));//false
+
+        //3.null和undefined 转boolean
+        console.log(Boolean(null));//false
+        console.log(Boolean(undefined));//false
+
+        //.4对象类型转boolean
+        console.log(Boolean([]));//true
+        console.log(Boolean({}));//true
+        console.log(Boolean[1]);//true
+        console.log(Boolean(function () { }));//true
+
+
+        //其他类型转string
+        //number转string
+        //两种方法；1.全局的方法string()  2.除了null和undefined,其他类型都有tostring()方法
+        //直接添加双引号变成字符串
+        console.log(String(1))
+        console.log(String(-2))
+        console.log(String(0))
+        console.log(String(2.3))
+        console.log(String(Infinity))
+        console.log(String(NaN))
+
+        //boolean转string
+        //直接添加双引号变成字符串
+        console.log(String(true))
+        console.log(String(false))
+
+        //null和undedined转string
+        //直接添加双引号变成字符串
+        console.log(String(null))
+        console.log(String(undefined))
+
+        //对象 转string
+        /* 
+           - 数组：直接去掉中括号，添加引号 空数组转为空字符串
+           - 对象：所有对象转为 [object Object]
+           - 函数：直接加引号      */
+        console.log(String([]))//""
+        console.log(String({}))//[object object]
+        console.log(String(function () { }))//"function() {}"
+
+
+        //number转string
+        console.log((1).toString())
+        console.log((Infinity).toString())
+        console.log((NAN).toString())
+
+        //boolean转string
+        console.log((true).toString())
+        console.log((false).toString())
+
+        //对象 转string
+        console.log([1, 2].toString)//"1,2"
+        console.log({}.toString)//[object object]
+        console.log(function () { }.toString)//"function() {}"
+
+        //其他类型转 number
+        //string转数字
+        //能转就转 不能转就是NaN 空的和空白字符的就是0
+        console.log(Number("1"))
+        console.log(Number("20"))
+        console.log(Number("2.6"))
+        console.log(Number("-2.3"))
+        console.log(Number("m2"))
+        console.log(Number(""))//0
+        console.log(Number(" "))//0
+        console.log(Number("Ifnity"))
+        console.log(Number("ob1101"))
+
+        //boolean 转数字
+        //true为1 false为0
+        console.log(Number(true))//1
+        console.log(Number(false))//0
+
+        //null和underfined转数字
+        //null是0  undefined是NaN
+        console.log(Number(null))//0
+        console.log(Number(undefined))//NAN
+
+        //对象转数字
+        // - 空数组是0 ，只有一位的数组，把这一位转数字
+        // - 其他全部是NaN
+        console.log(Number([])) //0
+        console.log(Number([1])) //1
+        console.log(Number(["a"])) //NaN
+        console.log(Number([1, 2])) //NaN
+        console.log(Number({})) //NaN
+        console.log(Number(function () { })) //NaN
+
+        //parsein 方法
+        //将字符串转数字  取整
+        // 从第一位开始读，直到碰到非数字停止，把前边读的数字提出来
+        console.log(parseInt("123")) //123
+        console.log(parseInt("123.45")) //123
+        console.log(parseInt("1a23.45")) //1
+        console.log(parseInt("123a.45")) //123
+        console.log(parseInt("a123a.45")) //NAN
+        console.log(parseInt("a1px")) //NAN
+        console.log(parseInt(12.1)) //12
+
+        //parsefolat 方法
+        //将字符串转数字 可以取浮点数
+        //从第一位开始读，直到碰到非数字(可以碰到一次小数点)停止，把前边读的数字提出来
+        console.log(parseFloat("123")) //123
+        console.log(parseFloat("123.45")) //123.4
+        console.log(parseFloat("1.223.45")) //1.2
+        console.log(parseFloat("123a.45")) //123
+        console.log(parseFloat("a123a.45")) //NAN
+        console.log(parseFloat("a1px")) //NAN
+        console.log(parseFloat(12.1)) //12.1
+
+        //parseInt的进制转换功能
+        //把2进制的'111'转换为十进制的数
+        console.log(parseInt("111", 2)) //7
+        console.log(parseInt("ff", 16)) //255
+        console.log(parseInt("10", 6)) //255
+        console.log(parseInt("z", 36)) //255 
+        console.log(parseInt("z2131jsadk", 36)) //3560325691419272
+        console.log(parseInt("3", 2)) //NaN
+        console.log(parseInt("0", 1)) //NaN 没有1进制
+        console.log(parseInt("12", 0)) //0进制默认为10进制 
+
+        //逗号操作符
+        //1.一条语句执行多个操作
+        var a = 1,
+            b = 2,
+
+        //2.逗号操作符返回逗号右侧的值
+        var c = (1, 2, 3, 4, 5);
+        console.log(c);//5
+
+        /*  其他使用：
+                    - 函数的多个参数使用逗号间隔
+                    - 数组的值用逗号间隔
+                    - 对象的每一对key-value使用逗号间隔*/
+        console.log(1, 2, 3);
+        var arr = ["damao", "ermao"];
+        var obj = {
+            name: "damao",
+            sex: "nan",
+            age: 18
+        }
+
+        //赋值运算符
+        //- =:把等号右侧的值给等号左侧的变量
+        var a = 6;//把6 赋值给a
+
+        //把2赋值给b d p
+        //注意的是，这条语句只声明了b这个变量，其他变量没有声明
+        //如果变量没有被声明，是可以被赋值操作，但是不能去获取他的值使用，因为没有 所以会报错
+        var b = d = p = 7;
+        f = p;
+        console.log(f);
+
+        //赋值运算符也有返回值
+        console.log(a = 3);
+
+        //乘法运算符
+        //所有全部转为number运算
+        console.log(2 * 2) //4
+        console.log(2 * -2) //-4
+        console.log(2 * -2.1) //-4.2
+        console.log("2" * 2) //4
+        console.log("2" * "2") //4
+        console.log("2a" * "2") //NAN
+        console.log("2a" * 2) //NAN
+        console.log(true * "2") //2
+        console.log(true * 1) //1
+        console.log(null * 1) //0
+        console.log(null * undefined) //NAN
+        console.log(2 * undefined) //NAN
+        console.log([] * 2) //0
+        console.log([2] * 2) //4
+        console.log([2, 2] * 2) //NAN
+        console.log({} * 2) //NAN
+
+        //除法运算符
+        //全部转为数字运算
+        console.log(4 / 2) //2
+        console.log(4 / -2) //2
+        console.log("4" / 2) //2
+        console.log("4" / "2") //2
+        console.log("4a" / "2") //NAN
+        console.log("4a" / 2) //NAN
+        console.log(true / "4") //0.25
+        console.log(true / 1) //1
+        console.log(null / 1) //0
+        console.log(null / undefined) //NAN
+        console.log(4 / undefined) //NAN
+        console.log([] / 4) //0
+        console.log([4] / 2) //2
+        console.log([4, 4] / 2) //NAN
+
+        //求模 取余
+        // 全部转为number运算   取余的符号只看被除数
+        console.log(8 % 3);//2
+        console.log(8 % -3);//2
+        console.log(-8 % 3);//-2
+        console.log(-8 % -3);//-2 
+
+        //减法运算符
+        console.log("3" - 1) //2
+        console.log("3" - "1") //2
+        console.log("3" - "1a") //NAN
+        console.log(null - true) //-1
+        console.log(null - undefined) //NAN
+        console.log([] - []) //0
+        console.log([2] - []) //2
+        console.log({} - []) //NAN
+
+        //Infinity运算
+        console.log(Infinity * Infinity) //Infinity
+        console.log(Infinity + Infinity) //Infinity
+        console.log(Infinity - Infinity) //NAN
+        console.log(Infinity / Infinity) //NAN
+        console.log(Infinity % Infinity) //NAN
+
+        console.log(Infinity * -Infinity) //Infinity
+        console.log(Infinity + -Infinity) //NAN
+        console.log(Infinity - -Infinity) //Infinity
+        console.log(Infinity / -Infinity) //NAN
+        console.log(Infinity % -Infinity) //NAN
+
+        // 加法运算符
+        //只要两个操作数出现有一个字符串，则都转为字符串方式拼接
+        //只要出现对象，则转为字符串拼接
+        console.log(1 + 1) //2
+        console.log(1 + "1") //'11'
+        console.log("1" + "1") //'11'
+        console.log(null + "1") //'null1'
+        console.log(null + 1) //1
+        console.log(null + undefined) //NAN
+        console.log("1" + undefined) //'1undefined'
+        console.log([] + undefined) //'undefined'
+        console.log([] + {}) //[object object]
+        console.log([] + null)//'null'
+        console.log({} + 1) //'[object object]1'  
+
+        //字符串拼接
+        var age = 14;
+        var name = "damao"
+        var hobby = "html5"
+
+        var info = "我是" + name + ",我今年" + age + "岁，我喜欢" + hobby;
+        console.log(info)
+
+        var str = 1 + 2 + "3" + 4; //'334'
+        var str = "1" + 2 + 3 + "4"; //'1234'
+        var str = "1" + 2 + 3 + 4; //'1234'
+        var str = "1" + 2 + "3" + 4; //'1234'
+
+        var num5 = 1;
+        var num6 = 2;
+        alert("num5 + num6 = " + num5 + num6); //"num5 + num6 =12"
+
+
+        //计算练习
+        /* 
+         请输入半径，计算你家的面积和周长
+        */
+        //获取元素
+        var cBtn = document.getElementById('btn3');
+        var cIpt = document.getElementById('Ipt1');
+        //给btn3绑定点击事件
+        cBtn.onclick = function () {
+            //获取输入的半径
+            var r = cIpt.value;
+
+            console.log(3.14 * r * r);
+            console.log(2 * 3.14 * r);
+
+        }
+
+        //点击累加
+        var qBtn = document.getElementById('btn4');
+        var qIpt = document.getElementById('Ipt2');
+
+        //定义一个初始值
+        var base = 0;
+        qBtn.onclick = function(){
+            base = base + 2;
+            qIpt.value = base;
+
+        }
+
+    </script>
+    <div>
+        <div>
+            <label for="user">账号</label>
+            <input type="text" id="user" autofocus>
+        </div>
+        <div>
+            <label>
+                密码:<input type="password" id="pass">
+            </label>
+            <button id="btn2">提交</button>
+        </div>
+    </div>
+    
+    <input type="text" id="Ipt1">
+    <button id="btn3">计算</button>
+    
+    <input type="text" id="Ipt2">
+    <button id="btn4">点我</button>
+</body>
+
+</html>

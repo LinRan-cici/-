@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        手写instanceof：
+        MyInstanceof(A,B)
+        判断B的原型对象在不在A的原型链上
+        
+        
+        */
+        function MyInstanceof(A, B) {
+            var _B = B.prototype;
+            var _A = A.__proto__;
+
+            while (_A) {
+                if (_A === _B) {
+                    return true;
+                }
+                _A = _A.__proto__;
+            }
+            //当while执行完成还没有返回true,则说明返回false
+            return false;
+        }
+
+        function Foo() { }
+        var f1 = new Foo();
+        console.log(MyInstanceof(f1, Foo));
+        console.log(MyInstanceof(Foo, Function));
+        console.log(MyInstanceof(f1, Object));
+        console.log(MyInstanceof(Object, Object));
+        console.log(MyInstanceof(Function, Object));
+        console.log(MyInstanceof(Function, Function));
+        console.log(MyInstanceof(Function, Foo));
+    </script>
+</body>
+
+</html>

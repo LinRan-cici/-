@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        bind作用：
+        1.改变了函数的上下文对象
+        2.返回一个改变上下文对象指向的函数
+
+        换一种思考方式
+        bind返回了一个函数，当我调用这个函数时，把函数的this指向改变为bind第一个参数
+        
+        
+        
+        */
+
+        Function.prototype.MyBind = function(context){
+            var _this = this;
+            var arg = Array.from(arguments).slice(1);
+            return function(){
+              _this.apply(context,arg);
+            }
+        }
+
+        function fn(a,b){
+            console.log(this,a + b);
+        }
+
+        var re = fn.MyBind(1,1,2)
+        re();
+        var re = fn.MyBind("1",1,2)
+        re();
+        var re = fn.MyBind(null,1,2)
+        re();
+        var re = fn.MyBind([1,2],1,2)
+        re();
+        var re = fn.MyBind({
+            name:"laowang"
+        },1,2)
+        re();
+    </script>
+</body>
+</html>

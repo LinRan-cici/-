@@ -1,0 +1,111 @@
+.ta-box{
+    width:1200px;
+    margin:0 auto;
+}
+.ta-box .ta{
+    width:312px;
+    overflow: hidden;
+    margin: 0 auto;
+    
+}
+.ta-box .ta-list{
+   
+    text-align: center;
+
+}
+.ta-box .ta-list a{
+    display: inline-block;
+    padding: 0 18px;
+    font-size: 16px;
+    text-decoration: none;
+    color:#999;
+    text-align: center;
+}
+.ta-box .ta-list a:hover{
+    color:lightgreen;
+    
+}
+.ta-box .ta-list .on{
+    color:#e60012;
+}
+.ta-box .ta-list .ta-img{
+    width:64px;
+    height:35px;
+    
+    /* border:1px solid red; */
+   
+}
+.ta-box .ta-list .ta-img i{
+    display: block;
+    width:35px;
+    height:35px;
+    background-image: url('../img/home/bg0.png');
+    margin-left: 5px;
+}
+
+.ta-box .ta-list:nth-of-type(1) a .ta-img i{
+  background-position:-35px 0;
+}
+.ta-box .ta-list:nth-of-type(2) a .ta-img{
+  background-position:-70px 0;
+}
+.ta-box .ta-list:nth-of-type(3) a .ta-img{
+  background-position:-70px 0;
+}
+
+.ta-box .ta-list .ta-wenzi{
+    margin:5px 0;
+    line-height:28px;
+}
+.ta-box .content{
+    width: 1200px;
+    margin: 0 auto;
+   
+    padding: 10px;
+}
+.content ul{
+ padding: 0;
+ margin:0 ;
+ list-style-type: none;
+ height:340px;
+ 
+}
+.content ul li .img-item{
+    float: left;
+    border:1px solid red;
+    width:269px;
+    height:328px;
+    margin:0 12px 10px;
+    background-color: #FFF;
+    overflow: hidden;
+    /* box-sizing: border-box; */
+}
+  
+
+.content .tb-pic{
+   width:230px;
+   height:210px;
+   overflow: hidden;
+   margin:5px auto 18px;
+   text-align:center;
+}
+.content .tb-pic img{
+    width:200px;
+    height: 200px;
+}
+.content ul li .img-item .info-title{
+    width:259px;
+    height:50px;
+    line-height: 28px;
+    padding-left: 10px;
+   overflow: hidden;
+}
+.content ul li .img-item .info-price{
+    font-size:20px;
+    color:#e1251b;
+    height:35px;
+    padding-left:10px;
+    line-height: 24px;
+    margin:10px auto 0;
+
+}

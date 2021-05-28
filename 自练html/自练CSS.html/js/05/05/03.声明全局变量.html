@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         
+        //声明全局变量的方法
+        //1.在全局作用域中，直接用var声明变量
+        var a = 1;
+   
+         //2.给一个没有声明的变量赋值，这个变量就是全局变量(一般不会这么用)
+        function fun() {
+            //此语句只声明了a bcd没有声明
+            var a = b = c = d = 2;
+
+            //3.给window扩展属性，也是全局变量
+            window.hello = "world";
+        }
+        fun();
+        console.log(b,c,d);//2 2 2 
+        console.log(hello);//world
+        console.log(typeof hello);//string
+
+
+      
+    </script>
+</body>
+</html>

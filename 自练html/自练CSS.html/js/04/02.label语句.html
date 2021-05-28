@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        break和continue默认推迟当前最近所在的循环
+        -lable声明是给for循环起一个名字，当使用break和continue 的时候。可以选择退出所在的哪一个循环
+        
+        
+        
+        
+        
+        */
+        o:
+
+        for (var i = 0; i < 5; i++) {
+            if (i === 3) {
+                continue ;
+            }
+            console.log(i);
+        }
+
+        outer:
+        for (var i = 0; i < 5; i++) {
+            inner: for (var j = 0; j < 5; j++) {
+                if (j > 2) {
+                    // break;
+                    break outer;
+                }
+                console.log(i, j)
+            }
+        }
+    </script>
+</body>
+
+</html>

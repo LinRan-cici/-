@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .aside {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .aside .con {
+            width: 60px;
+            height: 60px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .aside .con h2 {
+            width: 60px;
+            height: 60px;
+            background-color: hotpink;
+            text-align: center;
+            position: relative;
+            line-height: 60px;
+            z-index: 2;
+        }
+
+        .aside .con .move {
+            width: 100px;
+            height: 60px;
+            background-color: lightcoral;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aside">
+        <div class="con">
+            <h2>con</h2>
+            <p class="move">侧边栏</p>
+        </div>
+        <div class="con">
+            <h2>con</h2>
+            <p class="move">侧边栏</p>
+        </div>
+        <div class="con">
+            <h2>con</h2>
+            <p class="move">侧边栏</p>
+        </div>
+    </div>
+
+    <script>
+        var oCons = document.querySelectorAll('.con');
+        var oMoves = document.querySelectorAll('.move');
+
+
+
+        for (var i = 0; i <= oCons.length; i++) {
+            oCons[i].index = i;
+            move(i);
+        }
+
+        function move(i) {
+            var l = 0;
+            var timer = null;
+            oCons[i].onmousemove = function () {
+                clearInterval(timer);
+                _this = this;
+                timer = setInterval(function () {
+                    l--;
+                    if (l <= -100) {
+                        l = -100;
+                        clearInterval(timer);
+                    }
+                    oMoves[_this.index].style.left = l + "px";
+                }, 10)
+
+            }
+
+            oCons[i].onmouseleave = function () {
+                clearInterval(timer);
+                _this = this;
+                
+                timer = setInterval(function () {
+                    l++;
+                    if (l >= 0) {
+                        l = 0;
+                        clearInterval(timer);
+                    }
+                    oMoves[_this.index].style.left = l + "px";
+                }, 10)
+
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

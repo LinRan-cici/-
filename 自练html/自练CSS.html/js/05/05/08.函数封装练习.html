@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.求1 - n之间所有数的和
+      /*   function add1(n) {
+            var sum = 0;
+            for (var i = 1; i <= n; i++) {
+                sum += i;
+            }
+            return sum;//5050
+        } */
+        //函数调用（可以确定是否有返回值，还有传递的参数）
+       /*  var re = add1(100);
+        console.log(re);
+
+        //求n - m之间所有数的和
+        function add2(n, m) {
+            var sum = 0;
+            for (var i = n; i <= m; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        var re = add2(10, 15);
+        console.log(re)//75 */
+
+        // 求2个数中的最大值
+        function max(a, b) {
+            return a > b ? a : b;
+        }
+         var re = max(2, 3);
+        console.log(re);
+
+        // 求3个数中的最大值
+       /*  function max(a, b, c) {
+            if (a > b && a > b) {
+                return a;
+            } else if (b > a && b > c) {
+                return b;
+            } else if (c > a && c > b ) {
+                return c;
+            }
+
+        }
+        max(4, 5, 6);
+        console.log(max(4, 5, 6));//6
+ */
+        // 圆的面积
+
+       /*  function getMian(r) {
+            return 3.14 * r * r;
+
+        }
+
+        getMian(5);
+        console.log(getMian(5));//78.5 */
+
+
+
+        // 判断一个数是否是素数(又叫质数， 只能被1和自身整数的数)
+
+        function num(n) {
+            
+           for (var i = 2;i < n;i++){
+            if (n % i === 0) {
+                return false;
+            } 
+           }
+            return true; 
+        }
+       var re = num(4);
+       console.log(re);//false
+
+        // 求任意个数的最大值
+        function getMax() {
+            var max = arguments[0];
+            for (var i = 1; i <= arguments.length; i++) {
+                if ( max < arguments[i]) {
+                    max = arguments[i];
+                }
+                
+            }
+            return max;
+        }
+        var re = getMax(4, 5, 6,36);
+        console.log(re);
+
+
+        // 求n个数的和
+        function getSum() {
+            var sum = 1;
+            for (var i = 1; i < arguments.length; i++) {
+                sum += arguments[i]
+            }
+            return sum;
+
+        }
+        getSum(1, 2, 3, 4, 5, 6);
+        console.log(getSum(1, 2, 3, 4, 5, 6));//21
+
+    </script>
+</body>
+
+</html>

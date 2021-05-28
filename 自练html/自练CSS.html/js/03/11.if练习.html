@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="ipt" />
+    <button id="btn">等级</button>
+    <script>
+        /* 
+        用户输入成绩 然后弹出成绩的等级
+            90-100:S
+            80-90:A
+            70-80:B
+            60-70:C
+            0-60:D
+        */
+        var oIpt = document.getElementById('ipt');
+        var oBtn = document.getElementById('btn');
+
+        oBtn.onclick = function () {
+            var userscore = +oIpt.value;
+
+            if (userscore >= 90) {
+                alert("S");
+            } else if (userscore >= 80) {
+                alert("A");
+            } else if (userscore >=70) {
+                alert("B");
+            } else if (userscore >= 60) {
+                alert("C");
+            }
+             else {
+                alert("D");
+            }
+        }    
+    </script>
+</body>
+
+</html>

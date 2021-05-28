@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            width: 600px;
+            margin: 0 auto;
+            border: 1px solid #000;
+            display: flex;
+        }
+
+        #left {
+            width: 200px;
+            height: 300px;
+            background-color: hotpink;
+            text-align: center;
+            line-height: 20px;
+
+        }
+
+        #change {
+            width: 200px;
+            height: 300px;
+            background-color: khaki;
+        }
+
+        #change button {
+            display: block;
+            width: 100%;
+            margin: 20px 0;
+
+        }
+
+        #right {
+            width: 200px;
+            height: 300px;
+            background-color: hotpink;
+            text-align: center;
+            line-height: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="outer">
+        <div id="left">
+            <p>con1</p>
+            <p>con2</p>
+            <p>con3</p>
+            <p>con4</p>
+        </div>
+        <div id="change">
+            <button id="lbtn">&gt;&gt;&gt;&gt;&gt;</button>
+            <button id="rbtn">&lt;&lt;&lt;&lt;&lt;</button>
+        </div>
+        <div id="right">
+            <p>con1</p>
+            <p>con2</p>
+            <p>con3</p>
+            <p>con4</p>
+        </div>
+    </div>
+
+    <script>
+        var oOuter = document.getElementById('outer');
+        var oLeft = document.getElementById('left');
+        var oRight = document.getElementById('right');
+        var oLbtn = document.getElementById('lbtn');
+        var oRbtn = document.getElementById('rbtn');
+
+        var oLeftPs = oLeft.getElementsByTagName('p');
+        var oRightPs = oRight.getElementsByTagName('p');
+        //给所有左侧元素绑定点击事件，点击改变颜色
+        for (var i = 0; i < oLeftPs.length; i++) {
+            oLeftPs[i].onclick = function () {
+                this.style.background = "red";
+                this.dataset.click = "true";
+            }
+        }
+
+        //给所有右侧元素绑定点击事件，点击改变颜色
+        for (var i = 0; i < oRightPs.length; i++) {
+            oRightPs[i].onclick = function () {
+                this.style.background = "red";
+                this.dataset.click = "true";
+            }
+        }
+
+        oLbtn.onclick = function () {
+            for (var i = 0; i < oLeftPs.length; i++) {
+                //判断
+                if (oLeftPs[i].dataset.click) {
+                    oLeftPs[i].style.background = "transparent";
+                    delete oLeftPs[i].dataset.click;
+                    oRight.appendChild(oLeftPs[i]);
+                    i--;
+                }
+            }
+
+        }
+
+        oRbtn.onclick = function () {
+            for (var i = 0; i < oRightPs.length; i++) {
+                if (oRightPs[i].dataset.click) {
+                    oRightPs[i].style.background = "transparent";
+                    delete oRightPs[i].dataset.click;
+                    oLeft.appendChild(oRightPs[i]);
+                    i--;
+
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

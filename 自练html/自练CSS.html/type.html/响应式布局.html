@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('../font_2463469_46ajqsoipzt/iconfont.eot');
+            src: url('../font_2463469_46ajqsoipzt/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('../font_2463469_46ajqsoipzt/iconfont.woff2') format('woff2'),
+                url('../font_2463469_46ajqsoipzt/iconfont.woff') format('woff'),
+                url('../font_2463469_46ajqsoipzt/iconfont.ttf') format('truetype'),
+                url('../font_2463469_46ajqsoipzt/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #out {
+            width: 100%;
+            background-color: #2D4373;
+            min-width: 400px;
+            overflow: hidden;
+        }
+
+        #out h1 {
+            /* width: 100%; */
+            height: 80px;
+            line-height: 80px;
+            font-size: 32px;
+            color: #fff;
+            background-color: #3B5998;
+            text-align: center;
+        }
+
+        #out li {
+            height: 38px;
+            line-height: 38px;
+            margin: 6px 8px 0;
+            text-align: center;
+            font-size: 12px;
+            background-color: #3B5998;
+            border-radius: 3px;
+        }
+
+
+        #out a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
+
+        }
+
+        #out form {
+            height: 48px;
+            margin: 8px;
+            position: relative;
+        }
+
+        #out input {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            box-sizing: border-box;
+            background-color: #CBD9F5;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 3px;
+            border: 0;
+        }
+
+        #out button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 72px;
+            height: 48px;
+            border: 0;
+            outline: none;
+            font-size: 24px;
+            color: #A0B3D9;
+            background-color: transparent;
+        }
+
+        @media (min-width:768px) and (max-width:992px) {
+            #out {
+                overflow: visible;
+
+            }
+
+            #out h1 {
+                float: left;
+                width: 40%;
+                font-size: 20px;
+                height: 48px;
+                line-height: 48px;
+
+            }
+
+            #out ul {
+                float: left;
+                width: 60%;
+                line-height: 48px;
+            }
+
+            #out li {
+                float: left;
+                margin: 0;
+                width: 33.33%;
+                height: 48px;
+                border-radius: 0;
+                font-size: 12px;
+
+            }
+
+            #out::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            #out form {
+                float: left;
+                width: 100%;
+                height: 48px;
+                /* padding: 8px; */
+                /* margin: 0; */
+                /* border-bottom: 1px solid transparent; */
+                box-sizing: border-box;
+            }
+
+            #out input {
+                font-size: 16px;
+                height: 48px;
+
+                /* box-sizing: border-box; */
+            }
+        }
+
+        @media (min-width:992px) and (max-width:1200px) {
+            #out {
+                /* display: inline-block; */
+                height: 48px;
+                line-height: 48px;
+                /* border: 1px solid red; */
+                background-color: #3B5998;
+                box-sizing: border-box;
+
+            }
+
+            #out h1 {
+                float: left;
+                width: 33.33%;
+                height: 48px;
+                line-height: 48px;
+                font-size: 12px;
+            }
+
+            #out ul {
+                float: left;
+                width: 33.33%;
+
+
+            }
+
+            #out li {
+                float: left;
+                height: 48px;
+                line-height: 48px;
+                margin: 0;
+                padding-left: 50px;
+
+            }
+
+            #out form {
+                float: left;
+                width: 33.34%;
+                height: 48px;
+                line-height: 48px;
+                background-color: #3B5998;
+                padding: 0;
+                margin: 0;
+                padding-right: 10px;
+                /* border: 1px solid green; */
+                box-sizing: border-box;
+            }
+
+            #out input {
+                float: left;
+                height: 32px;
+                margin: 8px 0;
+            }
+           
+    </style>
+
+</head>
+
+<body>
+    <div id="out">
+        <h1>IBiJi.Tech</h1>
+        <ul id="nav">
+            <li><a href="#">系列教程</a></li>
+            <li><a href="#">实例教程</a></li>
+            <li><a href="#">工具推荐</a></li>
+        </ul>
+        <form active="" method="POST">
+            <input type="text" value="分享技术成就你我！" />
+            <button type="button" class="iconfont">&#xe600;</button>
+        </form>
+    </div>
+</body>
+
+</html>

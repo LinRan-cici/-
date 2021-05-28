@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        div {
+            width: 200px;
+            height: 300px;
+            border: 1px solid #000;
+            display: none;
+            top: 0;
+            left: 0;
+        }
+
+        ul {
+            width: 200px;
+            list-style: none;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <ul id="box">
+            <li><a href="">空</a></li>
+        </ul>
+    </div>
+    <script>
+        /* 
+        阻止默认事件：
+        主流：e.preventDfault();
+        IE:e.returnValue = false;
+
+        有个简单粗暴的阻止默认事件方式
+        return false;(书写在末尾)
+        
+        
+        */
+        var oDiv = document.querySelector('div');
+
+        document.oncontextmenu = function (e) {
+
+            flag = true;
+            e.preventDefault();
+            // return false;
+            flag = !flag;
+
+
+
+
+            document.addEventListener("oncontextmenu", function () {
+                oDiv.style.display = "block";
+            })
+
+
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

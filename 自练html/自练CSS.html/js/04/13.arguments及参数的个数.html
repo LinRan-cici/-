@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        arguments:
+        -在函数内部使用，是一个伪数组。包含了所有传入的实参
+        
+        获取参数的个数:
+        - 获取实参的个数：在函数中直接获取arguments.length
+        - 获取形参的个数，函数名的length即可获取
+
+        
+        
+        */
+
+        function fn1(a,b,c,d){
+            console.log(fn1.length);
+            console.log(arguments.length);
+            console.log(arguments);
+            console.log(a,b,c,d);
+        }
+
+        fn1(1,2,3,4,5,6,7,8) ;
+
+    </script>
+</body>
+</html>

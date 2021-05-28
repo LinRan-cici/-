@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        let btn = document.getElementById('btn')
+
+        btn.onclick = function () {
+            //创建一个promise实例
+            const promise = new Promise((resolve, reject) => {
+                console.log('同步回调执行了')
+                setTimeout(() => {
+                    console.log('异步回调执行了')
+                    // resolve('ok')
+                    reject('fail')
+                })
+            })
+
+            promise
+                .then(
+                    (value) => {
+                        console.log('promise成功了', value)
+
+                        return new Promise((resolve, reject) => {
+                            resolve('promiss2-xxx')
+                        })
+                    },
+                    (value) => {
+                        console.log('promise失败了', value)
+                        return new Promise((resolve, reject) => {
+                            reject('哈哈哈')
+                        })
+                    }
+                )
+
+                .then(
+                    (value) => {
+                        console.log('promise2', value)
+                    },
+                    (value) => {
+                        console.log('promise2', value)
+                    }
+                )
+        }
+
+    </script>
+</body>
+
+</html>

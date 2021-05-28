@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        sort方法： 
+        - 在原数组的基础上对元素进行排序
+        -如果在调用sort的时候没有传入任何参数，则会按照字符串的格式对数组元素进行排序
+        - 如果想按照其他的顺序进行排序，就必须向sort方法中传入比较函数
+        -比较函数有两个参数，比较函数会进行比较这两个参数
+        -sort 内部
+            - a是后边的值，b是前边的值
+            - return的值只要是负数就交换顺序，如果是0或者正数则不交换
+        */
+
+        //  sort无参数情况
+        /*  var arr = [1, 11, 24, 113, 34, 8];
+         var re =arr.sort();//无参数按照字符串的比较排列
+         console.log(arr);
+         console.log(re); */
+
+        //sort有参数情况
+
+        /*  var arr = [11, 1, 24, 113, 34, 8];
+         arr.sort(function(a,b){
+             if(a <b){
+                 return 1;
+             }else{
+                 return -1;
+             }
+         });
+         console.log(arr); */
+        //回调函数
+        var arr = [1, 11, 24, 113, 34, 8];
+        arr.sort(function (a, b) {
+            return a - b//升序
+        });
+        console.log(arr);
+
+        //对象的排序
+        var persons = [
+            { name: "lily1", sex: "女", age: 18 },
+            { name: "lily2", sex: "女", age: 19 },
+            { name: "lily3", sex: "女", age: 11 },
+            { name: "lily4", sex: "女", age: 28 },
+            { name: "lily5", sex: "女", age: 22 },
+        ];
+
+        persons.sort(function (a, b) {
+            return a.age - b.age;
+        });
+        console.log(persons)
+    </script>
+</body>
+
+</html>

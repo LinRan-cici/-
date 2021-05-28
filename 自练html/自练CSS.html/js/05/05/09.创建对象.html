@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+       // 创建对象
+        //1.字面量创建
+        var obj1 = {};
+        console.log(obj1);
+        //字面量创建对象的时候可以直接把属性书写在对象中
+        var obj2 ={
+            name : "lipeihua",
+            sex: "nan",
+            job: "teacher",
+            //sing也是对象的属性，是特殊属性可以被调用，被称为对象的方法
+            sing:function(){
+             console.log("sing a song");
+            }
+        }
+
+        obj2.age = 30;
+        console.log(obj2);
+
+        //实例化方法
+           var obj3 = new Object();
+           console.log(obj3);
+           obj3.name = "haijing";
+           obj3.age = 35;
+           obj3.sex = "nan";
+           obj3.eat = function (){
+               console.log("青菜和豆腐")
+           }
+
+
+        
+        
+        
+        
+     
+    </script>
+</body>
+</html>

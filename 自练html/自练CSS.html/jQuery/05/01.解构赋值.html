@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   
+
+    <div id="box"></div>
+    <script>
+        let arr1 = [1, 2, 3, 4]
+        //需求: 将数组中的每一个元素取出来,并且赋值给变量a,b,c,d
+        /*  let a =arr1[0]
+         let b =arr1[1]
+         let c =arr1[2]
+         let d =arr1[3] */
+        //数组的解构赋值
+        //    let [a, b, c, d] = arr1
+        //     console.log(a, b, c, d)
+
+        // let [a] = [10,20]
+        // console.log(a)//10
+
+        // let[a,b]= [10]
+        // console.log(b)//underfined
+
+        // let [a=10,b=20] = []
+        // console.log(a,b)//10,20
+
+        // let[g,h,...rest] = [2,5,6,15,25,45,36]
+        // console.log(g,h,rest)
+
+        // let [a,[b,c],d,e] = [1,[2,3],4,5]
+        // console.log(a,b,c,d,e);
+
+        // let a = 1, b = 2;
+        // [a,b] = [b,a]
+        // console.log(a,b)
+
+        // let [foo = hoo, hoo = 2] = []
+        //  console.log(foo, hoo)//会报错 先声明后使用
+
+        //对象的解构赋值
+        // let { foo, hoo, xxx } = { foo: 'hello', hoo: 'word' }
+        // console.log(foo,hoo,xxx)
+
+        //可以简写
+        //     let a=1,b=2;
+        //     console.log({a:a,b:b})
+        //     console.log({a,b})//简写
+
+        //     let { x, y = 10 } = { x: 1 }
+        //    console.log(x, y)//1,10
+        let { log } = console
+        let message = "这个是密码";
+        log(message.padStart(8, '#'))
+        log(message.padEnd(8, '#'))
+        log(message.padStart(8, '#*2222'))
+
+
+
+
+
+        /* let { name, age, sex } = { name: 'xiaoli', age: 22, sex: "nan" }
+        console.log(name, age, sex)  */
+
+        /*  let{name,age = hao} = {name:'xiaoli'}
+         console.log(name,age,sex)
+   */
+        /*   let data = {
+              message: {
+                  title: '今天天气真的很好',
+                  todo: '打台球',
+                  time: '时间2020.3.25',
+                  isLike: false,
+              },
+          }
+          let str = `<div>
+               <h3>${data.message.title}</h3>
+               <p>${data.message.todo}</p>
+               <p>${data.message.time}</p>
+               <p>${data.message.isLike ? '喜欢' : '不喜欢'}</p>
+              </div>`
+  
+          document.getElementById('box').innerHTML = str
+   */
+
+
+        let btn = document.getElementById('btn')
+        btn.onclick = function () {
+
+            console.log(this)
+            setTimeout(() => {
+                this.style.backgroundColor = "red";
+            }, 1000)
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        封装函数，传入10进制，返回二进制
+        
+        */
+        function to2b(num) {
+
+            //定义一个空数组来保存每次计算的余数
+            var arr = [];
+            //声明变量保存每次计算的余数
+            var re = null;
+            var str = "";//用字符串来表示最后的值
+
+            while (num > 0) {
+                re = num % 2;
+                arr.push(re);
+                num = parseInt(num / 2);
+            }
+
+            console.log(arr);
+            while (arr.length > 0){
+                str += arr.pop();
+            }
+            console.log(str);
+            return str;
+        }
+        var re1 = to2b(100);
+    </script>
+
+</body>
+
+</html>

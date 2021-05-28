@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 判断一个数是否是素数(又叫质数， 只能被1和自身整数的数)
+        function getZhi(n){
+           for(var i =2; i < n;i++){
+               if(n % i === 0){
+                return false;
+               }
+              
+           }
+           return true;
+        }
+        
+        var re = getZhi(3);
+        console.log(re);
+    </script>
+</body>
+</html>

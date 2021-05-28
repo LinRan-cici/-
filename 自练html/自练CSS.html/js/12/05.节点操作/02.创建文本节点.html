@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+   <script>
+  var oBtn = document.getElementById('btn');
+        oBtn.onclick = function (){
+            /* 
+            创建文本节点
+              - 方法一：
+              document.createTextNode("文本内容")；
+              - 方法二：
+              直接使用textContent
+        
+            */
+           var newLi = document.createElement("li");
+           console.log(newLi);
+
+           //方法一
+           var newLiText = document.createTextNode("newli");
+           console.log(newLiText)
+
+           //把文本节点插入元素中
+          /*  newLi.appendChild(newLiText)
+           console.log(newLi) */
+
+           //方法二
+           newLi.textContent = "newLi";
+           console.log(newLi)
+
+
+        }
+   </script> 
+</body>
+</html>

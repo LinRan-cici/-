@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+   /*
+        判断闰年：
+          年份能够被4整除且不能被100整除，或者年份能够被400整除
+   */
+        var year = 2000;
+
+        if (year % 4 === 0 && year % 100 !== 0 ||year % 400 === 0) {
+            alert('是')
+        }else {
+            alert("不是")
+        }
+            </script>
+</body>
+
+</html>

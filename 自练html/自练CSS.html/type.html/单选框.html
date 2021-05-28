@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8"/>
+       <style>
+           .radio-box{
+               padding: 0;
+               margin:0; 
+               width:300px;
+               border: 1px solid pink;
+               list-style-type:none;
+           }
+           .radio-box li input{  
+               display: none;
+           }
+           .radio-box li label{
+               display:inline-block;
+               padding-top: 10px;
+               height:30px;
+               line-height: 30px;
+               margin-left:5px;
+               background-color: blanchedalmond;
+               color: #fff
+               
+           }
+           .radio-box li label::before{
+               display: inline-block;
+               content:'x';
+               width:30px;
+               height: 30px;
+               border:1px solid  skyblue;
+               /* color: skyblue; */
+               text-align: center;
+              
+
+           }
+           .radio-box li input:checked + label::before{
+               content: '✔';
+           }
+           #checkbox li input:checked + label{
+               background-color:thistle
+           }
+
+       </style>
+
+    </head>
+    <body>
+       <ul class="radio-box">
+           <li>
+                <input type="radio" name="text1" id="text1"/><label for="text1">今天,你努力了吗？</label>
+            </li>
+           <li>
+                <input type="radio" name="text2" id="text2"/><label for="text2">今天你,努力了吗？</label>
+            </li>
+           <li>
+                <input type="radio" name="text3" id="text3"/><label for="text3">今天你努 力了吗？</label>
+            </li>
+           <li>
+                <input type="radio" name="text4" id="text4"/><label for="text4">今天你努力了吗？?</label>
+            </li>
+                
+        </ul>
+        
+        </body>
+    
+</html>

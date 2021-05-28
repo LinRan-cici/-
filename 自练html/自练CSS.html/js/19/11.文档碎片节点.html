@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">添加10个li</button>
+    <ul id="box"></ul>
+    <script>
+        /* 
+        - DocumentFragment是一个虚拟的节点类型，仅仅存在于内存中，没有添加到文档树中，所以看不到渲染效果
+        - 使用document.createDocumentFragment()方法创建，使用appendchild等方法插入 
+        
+        */
+       var oBtn = document.getElementById('btn');
+       var oBox = document.getElementById('box');
+
+       oBtn.onclick = function(){
+           //创建一个碎片节点
+           var oFrag = document.createDocumentFragment();
+           for(var i = 0;i<10;i++){
+               var newLi = document.createElement("LI");
+               newLi.textContent = "hello";
+               oFrag.appendChild(newLi);
+           }
+           //等所有li全部放入碎片节点中时，将碎片节点插入页面
+
+           oBox.appendChild(oFrag);
+       }
+    </script>
+</body>
+</html>
